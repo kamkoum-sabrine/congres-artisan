@@ -20,17 +20,17 @@ Broderie::Broderie(const Broderie &b)
         tissusUtilises[i] = b.tissusUtilises[i];
     }
 }
-Broderie::~Broderie() {
+/**Broderie::~Broderie() {
      for (unsigned i = 0; i <tissusUtilises.size(); ++i) {
         delete tissusUtilises[i];
     }
-    }
+    }**/
 void Broderie::ajouterTissus(string*  tissus){
     tissusUtilises.push_back(tissus);
 }
 void Broderie::afficher()
 {
-    Creation::afficherCreation();
+    Creation::afficher();
     cout<<"Affichage des tissus : "<<endl;
     for(int i =0;i<tissusUtilises.size();i++)
     {

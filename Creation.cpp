@@ -25,10 +25,7 @@ Creation::Creation(const Creation &c)
         this->photos.push_back(photo);
     }
 }
-Creation::~Creation()
-{
 
-}
 
 int Creation::getId()
 {
@@ -63,7 +60,7 @@ void Creation::ajouterPhoto(string photo)
 {
     this->photos.push_back(photo);
 }
-void Creation::afficherCreation()
+void Creation::afficher()
 {
     cout<<"Affichage des informations relatives à une création : "<<endl;
     cout<<"Id : "<<id<<endl;

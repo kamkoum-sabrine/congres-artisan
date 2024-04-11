@@ -14,13 +14,13 @@ class Sculpture :public Creation
     Sculpture() ;
     Sculpture(int id, string nom, string description);
     Sculpture(const Sculpture &);
-    ~Sculpture();
+    virtual ~Sculpture(){};
 
     vector<string*> getMateriaux();
     void setMateriaux(vector<string*>);
 
     void ajouterMateriaux(string*);
-    void afficher();
+    virtual void afficher();
     void modifier();
 };
 

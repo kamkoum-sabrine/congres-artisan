@@ -22,7 +22,7 @@ class respensable :public personne
     void ajouter_session();
     void editer();
     void supprimer();
-    void afficherPersonne();
+    void afficher();
 
 
 };

@@ -69,14 +69,15 @@ int main()
 
     S1 = new Sculpture(123, "art", "c'est une creation de type art" );
      string materiel1,materiel2;
+
     cout<<"Donner le mateirel à ajouter ";
     cin>>materiel1;
-    C1->ajouterMateriaux(&materiel1);
+    S1->ajouterMateriaux(&materiel1);
     cout<<"Donner le materiel à ajouter ";
     cin>>materiel2;
     S1->ajouterMateriaux(&materiel2);
 
-    S1->afficher();
+
 
     Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
@@ -140,8 +141,10 @@ int main()
     vector <string> lA = p->getlangues();**/
    P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
    Artisan *A = dynamic_cast<Artisan*>(P);
-   A->ajouterCreation(*S1);
-   A->ajouterCreation(*B1);
-   A->ajouterCreation(*Bij);
+   ///Creation *C = dynamic_cast<Creation*>(S1);
+   A->ajouterCreation(S1);
+   A->ajouterCreation(B1);
+   A->ajouterCreation(Bij);
+   cout<<"-------------"<<"Affichage artisan "<<"------------"<<endl;
    A->afficher();
 }

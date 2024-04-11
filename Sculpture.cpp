@@ -27,17 +27,17 @@ Sculpture::Sculpture(const Sculpture &s)
         materiaux[i] = s.materiaux[i];
     }
 }
-Sculpture::~Sculpture() {
-      /** for (unsigned i = 0; i < materiaux.size(); ++i) {
+/**Sculpture::~Sculpture() {
+      for (unsigned i = 0; i < materiaux.size(); ++i) {
         delete materiaux[i];
-    }**/
     }
+    }**/
 void Sculpture::ajouterMateriaux(string  *materiel){
     materiaux.push_back(materiel);
 }
 void Sculpture::afficher()
 {
-    Creation::afficherCreation();
+    Creation::afficher();
 
     cout<<"Affichage des materiaux : "<<endl;
     for(int i =0;i<materiaux.size();i++)

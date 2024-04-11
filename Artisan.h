@@ -23,4 +23,4 @@ class Artisan :public personne
     void editer();
     virtual void afficher();
 };
-endif // ARTISAN_H_INCLUDED
+#endif // ARTISAN_H_INCLUDED

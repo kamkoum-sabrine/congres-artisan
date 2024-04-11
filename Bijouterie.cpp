@@ -21,17 +21,17 @@ Bijouterie::Bijouterie(const Bijouterie &b)
         pierresUtilises[i] = b.pierresUtilises[i];
     }
 }
-Bijouterie::~Bijouterie() {
+/**Bijouterie::~Bijouterie() {
      for (unsigned i = 0; i <pierresUtilises.size(); ++i) {
         delete pierresUtilises[i];
     }
-    }
+    }**/
 void Bijouterie::ajouterPierresUtilises(string*  pierre){
     pierresUtilises.push_back(pierre);
 }
 void Bijouterie::afficher()
 {
-    Creation::afficherCreation();
+    Creation::afficher();
     cout<<"Type metal : "<<typeMetal<<endl;
     cout<<"Affichage des pierres : "<<endl;
     for(int i =0;i<pierresUtilises.size();i++)

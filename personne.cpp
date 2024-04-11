@@ -116,7 +116,7 @@ void personne::saisirlangues()
     }
 }
 
-void personne::afficherPersonne()
+void personne::afficher()
 {
     cout<<"Affichage des informations relatives à ce personne : "<<endl;
     cout<<"Cin : "<<Cin<<endl;

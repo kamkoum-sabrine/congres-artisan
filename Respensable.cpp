@@ -21,9 +21,9 @@ respensable::respensable(string role,int c,string n,string p ,int t ,string e,st
         sessions.push_back(session);
     }
 }
-void respensable::afficherPersonne()
+void respensable::afficher()
 {
-    personne::afficherPersonne();
+    personne::afficher();
     cout<<"le role est : "<<role<<endl;
     cout<<"Affichage des sessions : "<<endl;
     for(int i =0;i<sessions.size();i++)

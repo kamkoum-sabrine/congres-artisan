@@ -14,13 +14,17 @@ class Bijouterie :public Creation
     Bijouterie() ;
     Bijouterie(int id, string nom, string description,string typeMetal);
     Bijouterie(const Bijouterie &);
-    ~Bijouterie();
+    virtual ~Bijouterie(){
+        for (unsigned i = 0; i <pierresUtilises.size(); ++i) {
+            delete pierresUtilises[i];
+        }
+    };
 
     vector<string*> getPierresUtilises();
     void setPierresUtilises(vector<string*>);
 
     void ajouterPierresUtilises(string*);
-    void afficher();
+    virtual void afficher();
     void modifier();
 };
 

@@ -14,7 +14,7 @@ class Creation
        Creation();
        Creation(int,string,string);
        Creation(const Creation &);
-       ~Creation();
+       virtual ~Creation(){};
        int getId(); // methode qui retourne l'identifiant de la création
        string getNom(); //methode qui retourne le nom de la Creation
        string getDescription(); // methode qui retourne la description de la création
@@ -26,7 +26,7 @@ class Creation
 
        void ajouterPhoto(string);
 
-       void afficherCreation();
+       virtual void afficher();
        void modifier();
 };
 

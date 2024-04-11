@@ -13,13 +13,17 @@ class Broderie :public Creation
     Broderie() ;
     Broderie(int id, string nom, string description);
     Broderie(const Broderie &);
-    ~Broderie();
+    virtual ~Broderie(){
+        for (unsigned i = 0; i <tissusUtilises.size(); ++i) {
+        delete tissusUtilises[i];
+        }
+    };
 
     vector<string*> getTissusUtilises();
     void setTissusUtilises(vector<string*>);
 
     void ajouterTissus(string*);
-    void afficher();
+    virtual void afficher();
     void modifier();
 };
 
