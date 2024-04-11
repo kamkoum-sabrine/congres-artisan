@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Artisan.h" open="1" top="0" tabpos="2">
-		<Cursor position="517" topLine="11" />
+	<File name="Artisan.cpp" open="1" top="1" tabpos="11">
+		<Cursor position="1412" topLine="42" />
 	</File>
-	<File name="Bijouterie.cpp" open="1" top="0" tabpos="9">
+	<File name="Artisan.h" open="1" top="0" tabpos="2">
+		<Cursor position="563" topLine="5" />
+	</File>
+	<File name="Bijouterie.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="2920" topLine="72" />
 	</File>
 	<File name="Bijouterie.h" open="1" top="0" tabpos="7">
@@ -13,7 +16,7 @@
 	<File name="Broderie.h" open="1" top="0" tabpos="6">
 		<Cursor position="0" topLine="9" />
 	</File>
-	<File name="Creation.cpp" open="1" top="0" tabpos="10">
+	<File name="Creation.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="1089" topLine="63" />
 	</File>
 	<File name="Creation.h" open="0" top="0" tabpos="10">
@@ -37,10 +40,10 @@
 	<File name="evaluation.h" open="0" top="0" tabpos="6">
 		<Cursor position="496" topLine="4" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="3875" topLine="128" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="3910" topLine="128" />
 	</File>
-	<File name="personne.cpp" open="1" top="0" tabpos="11">
+	<File name="personne.cpp" open="1" top="0" tabpos="10">
 		<Cursor position="1915" topLine="101" />
 	</File>
 	<File name="personne.h" open="1" top="0" tabpos="5">
