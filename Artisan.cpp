@@ -47,11 +47,23 @@ Artisan::~Artisan() {
     }
     }
 void Artisan::ajouterCreation(Creation*  c){
-    creations.push_back(c);
+    ///creations.push_back(c);
+     if (typeid(*c)== typeid(Sculpture)){
+            this->creations.push_back(new Sculpture(*static_cast<Sculpture*>(c)));
+        }
+        else {
+            if (typeid(*c)== typeid(Broderie)){
+            this->creations.push_back(new Broderie(*static_cast<Broderie*>(c)));
+        }
+        else {
+            this->creations.push_back(new Bijouterie(*static_cast<Bijouterie*>(c)));
+        }
+
+        }
 }
 void Artisan::afficher()
 {
-    personne::afficherPersonne();
+    personne::afficher();
     cout<<"Specialite : "<<specialite<<endl;
     cout<<"Affichage des creations : "<<endl;
     for(int i =0;i<creations.size();i++)

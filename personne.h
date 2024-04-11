@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include"Creation.h"
 using namespace std;
 
 class personne
@@ -17,10 +18,10 @@ class personne
       vector<string> langues;
     //int nblangues; A vérifier
     public :
-       personne();
-       personne(int,string,string,int,string,string);//a verifier concernant l'initialisation de l'attribut langues
+        personne();
+        personne(int,string,string,int,string,string);//a verifier concernant l'initialisation de l'attribut langues
        personne(const personne &);
-      // ~personne();
+       virtual ~personne(){};
        int getcin(); // methode qui retourne le num de cin de la personne
        string getnom(); //methode qui retourne le nom de la personne
        string getprenom(); // methode qui retourne le prenom de la personne
@@ -34,7 +35,7 @@ class personne
        void settel(int);
        void setemail(string);
        void setadresse(string);
-       void afficherPersonne();
+       virtual void afficher();
        void supprimer();
        void modifier();
        void saisirlangues();

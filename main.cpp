@@ -67,14 +67,14 @@ int main()
     int id = C1->getId();
     vector<string> photos = C1->getPhotos();
 
-    S1 = new Sculpture(id, nom, description);
-     string materiel;
+    S1 = new Sculpture(123, "art", "c'est une creation de type art" );
+     string materiel1,materiel2;
     cout<<"Donner le mateirel à ajouter ";
-    cin>>materiel;
-    S1->ajouterMateriaux(&materiel);
+    cin>>materiel1;
+    C1->ajouterMateriaux(&materiel1);
     cout<<"Donner le materiel à ajouter ";
-    cin>>materiel;
-    S1->ajouterMateriaux(&materiel);
+    cin>>materiel2;
+    S1->ajouterMateriaux(&materiel2);
 
     S1->afficher();
 
@@ -120,9 +120,9 @@ int main()
     Bij->ajouterPierresUtilises(&pierre2);
 
 
-   Artisan *A;
-   personne *p;
-    p=new personne();
+   ///Artisan *A;
+   personne *P=NULL;
+   /** p=new personne();
     p->setcin(0000);
     p->setnom("ahmed");
     p->settel(20000);
@@ -137,10 +137,11 @@ int main()
     int telA = p->gettel();
     string emailA = p->getemail();
     string adresseA = p->getadresse();
-    vector <string> lA = p->getlangues();
-   A = new Artisan(cin, nomA,prenomA, telA, emailA, adresseA, "khayat");
-   A->ajouterCreation(S1);
-   A->ajouterCreation(B1);
-   A->ajouterCreation(Bij);
+    vector <string> lA = p->getlangues();**/
+   P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
+   Artisan *A = dynamic_cast<Artisan*>(P);
+   A->ajouterCreation(*S1);
+   A->ajouterCreation(*B1);
+   A->ajouterCreation(*Bij);
    A->afficher();
 }

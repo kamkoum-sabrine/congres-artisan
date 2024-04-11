@@ -12,18 +12,15 @@ class Artisan :public personne
     string specialite;
     vector<Creation*> creations;
   public :
-    Artisan() ;
-    Artisan(int, string, string, int, string, string, string);
+     Artisan() ;
+     Artisan(int, string, string, int, string, string, string);
     Artisan(const Artisan &);
-    ~Artisan();
+    virtual ~Artisan();
     string getSpecialite();
     void setSpecialite(string);
     vector<Creation*> getCreations();
-    void ajouterCreation(Creation *);
+    void ajouterCreation(Creation*);
     void editer();
-    void afficher();
+    virtual void afficher();
 };
-
-
-
-#endif // ARTISAN_H_INCLUDED
+endif // ARTISAN_H_INCLUDED
