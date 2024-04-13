@@ -27,6 +27,18 @@ Sculpture::Sculpture(const Sculpture &s)
         materiaux[i] = s.materiaux[i];
     }
 }
+Sculpture  & Sculpture::operator=(const Sculpture& s) {
+    if (this != &s) { // Check for self-assignment
+        Creation::operator=(s); // Assign base class members using base class assignment operator
+        // Deep copy creations vector to avoid shallow copying
+        materiaux.clear(); // Clear existing creations to prevent memory leaks
+        for (unsigned i=0; i<s.materiaux.size();i++)
+        {
+            materiaux[i] = s.materiaux[i];
+        }
+    }
+    return *this;
+}
 /**Sculpture::~Sculpture() {
       for (unsigned i = 0; i < materiaux.size(); ++i) {
         delete materiaux[i];

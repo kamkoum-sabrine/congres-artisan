@@ -8,14 +8,13 @@ using namespace std;
 class Sculpture :public Creation
 {
   protected :
-    ///int nbMateriaux;
     vector<string*> materiaux;
   public :
     Sculpture() ;
     Sculpture(int id, string nom, string description);
     Sculpture(const Sculpture &);
     virtual ~Sculpture(){};
-
+    Sculpture & operator=(const Sculpture &);
     vector<string*> getMateriaux();
     void setMateriaux(vector<string*>);
 
