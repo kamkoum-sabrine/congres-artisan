@@ -13,6 +13,7 @@ class Broderie :public Creation
     Broderie() ;
     Broderie(int id, string nom, string description);
     Broderie(const Broderie &);
+    Broderie & operator=(const Broderie &);
     virtual ~Broderie(){
         for (unsigned i = 0; i <tissusUtilises.size(); ++i) {
         delete tissusUtilises[i];
@@ -21,7 +22,6 @@ class Broderie :public Creation
 
     vector<string*> getTissusUtilises();
     void setTissusUtilises(vector<string*>);
-
     void ajouterTissus(string*);
     virtual void afficher();
     void modifier();

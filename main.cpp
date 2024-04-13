@@ -111,4 +111,8 @@ int main()
    A->ajouterCreation(Bij);
    cout<<"-------------"<<"Affichage artisan "<<"------------"<<endl;
    A->afficher();
+
+   Artisan * A2 = new Artisan();
+   A2 = A;
+   A2->afficher();
 }

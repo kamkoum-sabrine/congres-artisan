@@ -20,6 +20,18 @@ Broderie::Broderie(const Broderie &b)
         tissusUtilises[i] = b.tissusUtilises[i];
     }
 }
+Broderie  & Broderie::operator=(const Broderie& b) {
+    if (this != &b) { // Check for self-assignment
+        Creation::operator=(b); // Assign base class members using base class assignment operator
+        // Deep copy creations vector to avoid shallow copying
+        tissusUtilises.clear(); // Clear existing creations to prevent memory leaks
+        for (unsigned i=0; i<b.tissusUtilises.size();i++)
+        {
+            tissusUtilises[i] = b.tissusUtilises[i];
+        }
+    }
+    return *this;
+}
 /**Broderie::~Broderie() {
      for (unsigned i = 0; i <tissusUtilises.size(); ++i) {
         delete tissusUtilises[i];
