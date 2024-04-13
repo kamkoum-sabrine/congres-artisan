@@ -21,6 +21,18 @@ Bijouterie::Bijouterie(const Bijouterie &b)
         pierresUtilises[i] = b.pierresUtilises[i];
     }
 }
+Bijouterie  & Bijouterie::operator=(const Bijouterie& b) {
+    if (this != &b) { // Check for self-assignment
+        Creation::operator=(b); // Assign base class members using base class assignment operator
+        // Deep copy creations vector to avoid shallow copying
+        pierresUtilises.clear(); // Clear existing creations to prevent memory leaks
+        for (unsigned i=0; i<b.pierresUtilises.size();i++)
+        {
+            pierresUtilises[i] = b.pierresUtilises[i];
+        }
+    }
+    return *this;
+}
 /**Bijouterie::~Bijouterie() {
      for (unsigned i = 0; i <pierresUtilises.size(); ++i) {
         delete pierresUtilises[i];
