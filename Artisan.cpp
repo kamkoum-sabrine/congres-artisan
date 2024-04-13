@@ -18,13 +18,10 @@ Artisan::Artisan(int cin, string nom, string prenom, int tel, string email, stri
     : personne(cin, nom, prenom, tel, email, adresse){
     this->specialite = specialite;
 }
-Artisan::Artisan(const Artisan &ar)
+Artisan::Artisan(const Artisan &ar) :personne(ar), specialite(ar.specialite)
 {
-    specialite = ar.specialite;
+    ///specialite = ar.specialite;
     creations.resize(ar.creations.size());
-   /** for (unsigned int i=0;i<ar.creations.size();i++){
-        creations[i] = ar.creations[i];
-    }**/
      for (unsigned i=0; i<ar.creations.size();i++)
     {
         if (typeid(*(ar.creations[i]))== typeid(Sculpture)){
@@ -40,6 +37,32 @@ Artisan::Artisan(const Artisan &ar)
 
         }
     }
+}
+
+Artisan  & Artisan::operator=(const Artisan& ar) {
+    if (this != &ar) { // Check for self-assignment
+        personne::operator=(ar); // Assign base class members using base class assignment operator
+        specialite = ar.specialite;
+
+        // Deep copy creations vector to avoid shallow copying
+        creations.clear(); // Clear existing creations to prevent memory leaks
+        for (unsigned i=0; i<ar.creations.size();i++)
+        {
+            if (typeid(*(ar.creations[i]))== typeid(Sculpture)){
+                this->creations.push_back(new Sculpture(*static_cast<Sculpture*>(ar.creations[i])));
+            }
+            else {
+                if (typeid(*(ar.creations[i]))== typeid(Broderie)){
+                this->creations.push_back(new Broderie(*static_cast<Broderie*>(ar.creations[i])));
+            }
+            else {
+                this->creations.push_back(new Bijouterie(*static_cast<Bijouterie*>(ar.creations[i])));
+            }
+
+            }
+        }
+    }
+    return *this;
 }
 Artisan::~Artisan() {
      for (unsigned i = 0; i <creations.size(); ++i) {
@@ -82,7 +105,7 @@ void Artisan::afficher()
              }
              else {
                 Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(creations[i]));
-             bij->afficher();
+                bij->afficher();
              }
          }
          }

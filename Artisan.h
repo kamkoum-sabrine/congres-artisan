@@ -15,6 +15,7 @@ class Artisan :public personne
      Artisan() ;
      Artisan(int, string, string, int, string, string, string);
     Artisan(const Artisan &);
+    Artisan & operator=(const Artisan &);
     virtual ~Artisan();
     string getSpecialite();
     void setSpecialite(string);

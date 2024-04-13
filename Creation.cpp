@@ -26,7 +26,6 @@ Creation::Creation(const Creation &c)
     }
 }
 
-
 int Creation::getId()
 {
     return id;
