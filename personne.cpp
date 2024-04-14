@@ -116,6 +116,34 @@ void personne::saisirlangues()
     }
 }
 
+void personne::saisirPersonne()
+{
+    cout<<endl<<"---------Saisir Personne----------"<<endl;
+    cout<<"Cin :";
+    cin>>Cin;
+    cout<<"Nom :";
+    cin>>nom;
+    cout<<"Prénom : ";
+    cin>>prenom;
+    cout<<"Numéro de téléphone : ";
+    cin>>tel;
+    cout<<"Adresse email :  ";
+    cin>>email;
+    cout<<"Adresse de résidence : ";
+    cin>>adresse;
+    cout<<"Langues: "<<endl;
+
+    int nblg;
+    cout<<"saisir le nombre de de langues :  "<<endl;
+    cin>>nblg;
+    for(int i=0;i<nblg;i++)
+    {
+        string langue;
+        cout<<"saisir la langue numero : "<<i+1<<endl;
+        std::cin>>langue;
+        langues.push_back(langue);
+    }
+}
 void personne::afficher()
 {
     cout<<"Affichage des informations relatives à ce personne : "<<endl;
