@@ -49,14 +49,26 @@ void Sculpture::ajouterMateriaux(string  *materiel){
 }
 void Sculpture::afficher()
 {
-    Creation::afficher();
-
+    ///Creation::afficher();
+    cout<<*this;
     cout<<"Affichage des materiaux : "<<endl;
     for(int i =0;i<materiaux.size();i++)
     {
         cout<<"Materiel n:"<<i+1<<endl;
         cout<<*(materiaux[i])<<endl;
     }
+}
+std::ostream& operator<<(std::ostream& o, const Sculpture& s )
+{
+
+    cout<<s;
+    o<<"Affichage des materiaux : "<<endl;
+    for(int i =0;i<s.materiaux.size();i++)
+    {
+        o<<"Materiel n:"<<i+1<<endl;
+        o<<*(s.materiaux[i])<<endl;
+    }
+    return o;
 }
 void Sculpture::modifier()
 {

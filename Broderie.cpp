@@ -42,13 +42,27 @@ void Broderie::ajouterTissus(string*  tissus){
 }
 void Broderie::afficher()
 {
-    Creation::afficher();
+    ///Creation::afficher();
+    cout<<*this;
     cout<<"Affichage des tissus : "<<endl;
     for(int i =0;i<tissusUtilises.size();i++)
     {
         cout<<"Tissu n:"<<i+1<<endl;
         cout<<*(tissusUtilises[i])<<endl;
     }
+}
+std::ostream& operator<<(std::ostream& o, const Broderie& c )
+{
+
+    //cout<<c;
+    o << static_cast<const Creation &>(c);
+    o<<"Affichage des tissus : "<<endl;
+    for(int i =0;i<c.tissusUtilises.size();i++)
+    {
+        o<<"Tissu n:"<<i+1<<endl;
+        o<<*(c.tissusUtilises[i])<<endl;
+    }
+    return o;
 }
 void Broderie::modifier()
 {

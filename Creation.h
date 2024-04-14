@@ -27,7 +27,9 @@ class Creation
        void ajouterPhoto(string);
 
        virtual void afficher();
-       void modifier();
+       virtual void modifier();
+
+       friend std::ostream& operator<<(std::ostream& o, const Creation& c);
 };
 
 

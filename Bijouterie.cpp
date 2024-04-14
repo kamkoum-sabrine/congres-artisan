@@ -43,7 +43,8 @@ void Bijouterie::ajouterPierresUtilises(string*  pierre){
 }
 void Bijouterie::afficher()
 {
-    Creation::afficher();
+    ///Creation::afficher();
+    cout<<*this;
     cout<<"Type metal : "<<typeMetal<<endl;
     cout<<"Affichage des pierres : "<<endl;
     for(int i =0;i<pierresUtilises.size();i++)
@@ -51,6 +52,19 @@ void Bijouterie::afficher()
         cout<<"Pierre n:"<<i+1<<endl;
         cout<<*(pierresUtilises[i])<<endl;
     }
+}
+std::ostream& operator<<(std::ostream& o, const Bijouterie& b )
+{
+
+    cout<<b;
+    o<<"Type metal : "<<b.typeMetal<<endl;
+    o<<"Affichage des pierres : "<<endl;
+    for(int i =0;i<b.pierresUtilises.size();i++)
+    {
+        o<<"Pierre n:"<<i+1<<endl;
+        o<<*(b.pierresUtilises[i])<<endl;
+    }
+    return o;
 }
 void Bijouterie::modifier()
 {

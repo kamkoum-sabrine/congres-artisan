@@ -112,8 +112,42 @@ void Artisan::afficher()
         /** if (typeid(*(creations[i]))== typeid(Sculpture)){
             this->creations->afficher();
         }**/
-    }
+}
+std::ostream& operator<<(std::ostream& o,const Artisan& a )
+{
+    o<<endl<<"-------------"<<"Affichage artisan "<<"------------"<<endl;
 
+    ///cout << a;
+    // Assuming there's an overloaded << for Personne (if Artisan inherits):
+     /// static_cast<const personne&>(a) << o
+     o << static_cast<const personne &>(a);
+    o<<"Specialite : "<<a.specialite<<endl;
+    o<<"Affichage des creations : "<<endl;
+    for(int i =0;i<a.creations.size();i++)
+    {
+        o<<"Creation n:"<<i+1<<endl;
+
+        cout << (*(a.creations[i]));
+         /**if (typeid(*(a.creations[i]))== typeid(Broderie)){
+             Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
+             ///b->afficher();
+             cout << b;
+         }
+         else {
+             if (typeid(*(a.creations[i]))== typeid(Sculpture)){
+             Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
+             ///s->afficher();
+             cout << s;
+             }
+             else {
+                Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
+                ///bij->afficher();
+                cout << bij;
+             }
+         }**/
+    }
+    return o;
+}
 void Artisan::editer()
 {
     cout<<"Mise à jour d'un artisan "<<endl;

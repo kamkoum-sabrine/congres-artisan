@@ -25,6 +25,7 @@ class Broderie :public Creation
     void ajouterTissus(string*);
     virtual void afficher();
     void modifier();
+    friend std::ostream& operator<<(std::ostream&, const Broderie& );
 };
 
 

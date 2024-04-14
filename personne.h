@@ -40,7 +40,8 @@ class personne
        void modifier();
        void saisirlangues();
        void ajouterLangue();
-
+        friend std::ostream& operator<<(std::ostream& o, const personne& p);
+       ///friend ostream& operator<<(ostream&, personne& );
 };
 
 

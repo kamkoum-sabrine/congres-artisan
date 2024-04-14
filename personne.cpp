@@ -128,6 +128,22 @@ void personne::afficher()
     getlangues();
 
 }
+std::ostream& operator<<(std::ostream& o, const personne& p)
+///ostream& operator<<(ostream& o, personne& p)
+{
+
+    o<<"Affichage des informations relatives à ce personne : "<<endl;
+    o<<"Cin : "<<p.Cin<<endl;
+    o<<"Nom : "<<p.nom<<endl;
+    o<<"Prénom : "<<p.prenom<<endl;
+    o<<"Numéro de téléphone : "<<p.tel<<endl;
+    o<<"Adresse email :  "<<p.email<<endl;
+    o<<"Adresse de résidence : "<<p.adresse<<endl;
+    for(int i=0; i<p.langues.size();i++){
+        o<<p.langues[i];
+    }
+    return o;
+}
 void personne::modifier()
 {
     char rep,reponse;

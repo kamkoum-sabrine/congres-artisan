@@ -21,6 +21,8 @@ int main()
     C1 = new Creation(123,"Art","c'est une creation de type art");
     C1->ajouterPhoto("image.png");
     C1->ajouterPhoto("image.jpeg");
+    ///cout<<*C1;
+
    /** C1->afficherCreation();
     C1->modifier();
     C1->afficherCreation();**/
@@ -109,10 +111,10 @@ int main()
    A->ajouterCreation(S1);
    A->ajouterCreation(B1);
    A->ajouterCreation(Bij);
-   cout<<"-------------"<<"Affichage artisan "<<"------------"<<endl;
-   A->afficher();
-
+    ///A->afficher();
+    cout << *A;
    Artisan * A2 = new Artisan();
    A2 = A;
-   A2->afficher();
+   ///A2->afficher();
+   cout << *A2;
 }

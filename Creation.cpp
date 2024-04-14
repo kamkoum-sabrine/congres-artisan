@@ -71,6 +71,20 @@ void Creation::afficher()
         cout<<"Photo "<<i<<endl<<photos[i]<<endl;
     }
 }
+std::ostream& operator<<(std::ostream& o, const Creation& c )
+{
+
+    o<<"Affichage des informations relatives à une création : "<<endl;
+    o<<"Id : "<<c.id<<endl;
+    o<<"Nom : "<<c.nom<<endl;
+    o<<"Description : "<<c.description<<endl;
+    o<<"Les photos de cette création:"<<endl;
+    for (unsigned int i=0; i<c.photos.size();i++)
+    {
+        o<<"Photo "<<i<<endl<<c.photos[i]<<endl;
+    }
+    return o;
+}
 void Creation::modifier()
 {
     cout<<"Mise à jour d'une creation"<<endl;
