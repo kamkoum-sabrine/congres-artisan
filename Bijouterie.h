@@ -25,6 +25,7 @@ class Bijouterie :public Creation
     void setPierresUtilises(vector<string*>);
 
     void ajouterPierresUtilises(string*);
+    void saisirBijouterie();
     virtual void afficher();
     void modifier();
     friend std::ostream& operator<<(std::ostream&, const Bijouterie& );

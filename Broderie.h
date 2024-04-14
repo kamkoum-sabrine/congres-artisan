@@ -23,6 +23,7 @@ class Broderie :public Creation
     vector<string*> getTissusUtilises();
     void setTissusUtilises(vector<string*>);
     void ajouterTissus(string*);
+    void saisirBroderie();
     virtual void afficher();
     void modifier();
     friend std::ostream& operator<<(std::ostream&, const Broderie& );

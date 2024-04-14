@@ -47,6 +47,22 @@ Sculpture  & Sculpture::operator=(const Sculpture& s) {
 void Sculpture::ajouterMateriaux(string  *materiel){
     materiaux.push_back(materiel);
 }
+void Sculpture::saisirSculpture()
+{
+
+    cout<<endl<<"-------Saisir sculpture-----------"<<endl;
+    Creation::saisirCreation();
+    int nbMat;
+    cout<<"saisir le nombre de materiaux :  "<<endl;
+    cin>>nbMat;
+    for(int i=0;i<nbMat;i++)
+    {
+        string materiel;
+        cout<<"saisir le materiel numero : "<<i+1<<endl;
+        std::cin>>materiel;
+        materiaux.push_back(&materiel);
+    }
+}
 void Sculpture::afficher()
 {
     ///Creation::afficher();
@@ -61,7 +77,7 @@ void Sculpture::afficher()
 std::ostream& operator<<(std::ostream& o, const Sculpture& s )
 {
 
-    cout<<s;
+    o << static_cast<const Creation &>(s);
     o<<"Affichage des materiaux : "<<endl;
     for(int i =0;i<s.materiaux.size();i++)
     {

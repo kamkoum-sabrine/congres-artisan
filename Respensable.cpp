@@ -7,7 +7,7 @@ respensable::respensable()
 {
 
 }
-respensable::respensable(string role,int c,string n,string p ,int t ,string e,string a):personne(c,n,p,t,e,a)
+respensable::respensable(string role,int c,string n,string p ,int t ,string e,string a, int nbLangues):personne(c,n,p,t,e,a,nbLangues)
 {
     int nbsessions;
     this->role=role;

@@ -13,7 +13,7 @@ class respensable :public personne
     vector<int> sessions;
   public :
     respensable() ;
-    respensable(string role,int c,string n,string p ,int t ,string e,string a);
+    respensable(string role,int c,string n,string p ,int t ,string e,string a,int nbLangues);
     respensable(const respensable &);
     string getrole();
     void getsessions();

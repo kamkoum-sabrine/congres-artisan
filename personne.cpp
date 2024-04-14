@@ -6,7 +6,7 @@ personne::personne()
 {
 
 }
-personne::personne(int c,string n,string p ,int t ,string e,string a)
+personne::personne(int c,string n,string p ,int t ,string e,string a, int nbLangues)
 {
 
     Cin=c;
@@ -15,10 +15,11 @@ personne::personne(int c,string n,string p ,int t ,string e,string a)
     tel=t;;
     email=e;
     adresse=e;
-    int nblg;
+    /**int nblg;
     cout<<"saisir le nombre de de langues :  "<<endl;
-    cin>>nblg;
-    for(int i=0;i<nblg;i++)
+    cin>>nblg;**/
+    this->nblangues = nblangues;
+    for(int i=0;i<nblangues;i++)
     {
         string langue;
         cout<<"saisir la langue numero : "<<i+1<<endl;
@@ -36,6 +37,7 @@ personne::personne(const personne &p)
     tel=p.tel;
     email=p.email;
     adresse=p.adresse;
+    nblangues = p.nblangues;
     for(int i=0;i<langues.size();i++)
     {
         string langue;
@@ -106,7 +108,7 @@ void personne::saisirlangues()
 {
     int nblg;
     cout<<"saisir le nombre de de langues :  "<<endl;
-    cin>>nblg;
+    std::cin>>nblg;
     for(int i=0;i<nblg;i++)
     {
         string langue;
@@ -118,7 +120,7 @@ void personne::saisirlangues()
 
 void personne::saisirPersonne()
 {
-    cout<<endl<<"---------Saisir Personne----------"<<endl;
+    cout<<endl<<"--------- Saisir Personne ---------"<<endl;
     cout<<"Cin :";
     cin>>Cin;
     cout<<"Nom :";
@@ -131,9 +133,8 @@ void personne::saisirPersonne()
     cin>>email;
     cout<<"Adresse de résidence : ";
     cin>>adresse;
-    cout<<"Langues: "<<endl;
 
-    int nblg;
+    /**int nblg;
     cout<<"saisir le nombre de de langues :  "<<endl;
     cin>>nblg;
     for(int i=0;i<nblg;i++)
@@ -142,7 +143,15 @@ void personne::saisirPersonne()
         cout<<"saisir la langue numero : "<<i+1<<endl;
         std::cin>>langue;
         langues.push_back(langue);
-    }
+    }*/
+    cout<<"Nombre de langues :  "<<endl;
+    cin>>nblangues;
+    for(int i=0;i<nblangues;i++)
+    {
+        string langue;
+        cout<<"saisir la langue numero : "<<i+1<<endl;
+        std::cin>>langue;
+        langues.push_back(langue);}
 }
 void personne::afficher()
 {

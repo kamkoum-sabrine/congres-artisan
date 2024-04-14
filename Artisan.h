@@ -13,7 +13,7 @@ class Artisan :public personne
     vector<Creation*> creations;
   public :
     Artisan() ;
-    Artisan(int, string, string, int, string, string, string);
+    Artisan(int, string, string, int, string, string, string,int);
     Artisan(const Artisan &);
     Artisan & operator=(const Artisan &);
     virtual ~Artisan();
@@ -23,7 +23,7 @@ class Artisan :public personne
     void ajouterCreation(Creation*);
     void editer();
     virtual void afficher();
-
+    void saisirArtisan();
     friend std::ostream& operator<<(std::ostream& os, const Artisan& a);
 };
 #endif // ARTISAN_H_INCLUDED

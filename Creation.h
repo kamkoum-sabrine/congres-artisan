@@ -25,7 +25,7 @@ class Creation
        void setDescription(string);
 
        void ajouterPhoto(string);
-
+        void saisirCreation();
        virtual void afficher();
        virtual void modifier();
 

@@ -19,6 +19,7 @@ class Sculpture :public Creation
     void setMateriaux(vector<string*>);
 
     void ajouterMateriaux(string*);
+    void saisirSculpture();
     virtual void afficher();
     void modifier();
     friend std::ostream& operator<<(std::ostream&, const Sculpture& );

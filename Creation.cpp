@@ -59,6 +59,26 @@ void Creation::ajouterPhoto(string photo)
 {
     this->photos.push_back(photo);
 }
+void Creation::saisirCreation()
+{
+    cout<<endl<<"-------Saisir creation-----------"<<endl;
+    cout<<"Id : ";
+    cin>>id;
+    cout<<"Nom ";
+    cin>>nom;
+    cout<<"Description : ";
+    cin>>description;
+    int nbPh;
+    cout<<"Saisir le nombre des photos à ajouter ";
+    cin>>nbPh;
+    for(int i=0;i<nbPh;i++)
+    {
+        string photo;
+        cout<<"saisir la photo numero : "<<i+1<<endl;
+        std::cin>>photo;
+        photos.push_back(photo);
+    }
+}
 void Creation::afficher()
 {
     cout<<"Affichage des informations relatives à une création : "<<endl;
@@ -73,7 +93,6 @@ void Creation::afficher()
 }
 std::ostream& operator<<(std::ostream& o, const Creation& c )
 {
-
     o<<"Affichage des informations relatives à une création : "<<endl;
     o<<"Id : "<<c.id<<endl;
     o<<"Nom : "<<c.nom<<endl;
@@ -83,6 +102,22 @@ std::ostream& operator<<(std::ostream& o, const Creation& c )
     {
         o<<"Photo "<<i<<endl<<c.photos[i]<<endl;
     }
+  /**  if (typeid(c)== typeid(Sculpture)) {
+         Sculpture *s = new Sculpture(*static_cast<Sculpture*>(c));
+            // Appel de l'opérateur << pour Broderie
+            o << *s;
+    } else if (typeid(c)== typeid(Broderie)) {
+         Broderie *b = new Broderie(*static_cast<Broderie*>(c));
+        // Appel de l'opérateur << pour Sculpture
+        o << *b;
+    } else if (typeid(c)== typeid(Bijouterie)) {
+        Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(c));
+        // Appel de l'opérateur << pour Bijouterie
+        o << *bij;
+    } else {
+        // Cas où le type de création est inconnu ou non géré
+        o << "Type de création inconnu." << std::endl;
+    }**/
     return o;
 }
 void Creation::modifier()

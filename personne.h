@@ -16,10 +16,10 @@ class personne
       string email;
       string adresse;
       vector<string> langues;
-    //int nblangues; A vérifier
+      int nblangues;
     public :
         personne();
-        personne(int,string,string,int,string,string);//a verifier concernant l'initialisation de l'attribut langues
+        personne(int,string,string,int,string,string,int);//a verifier concernant l'initialisation de l'attribut langues
        personne(const personne &);
        virtual ~personne(){};
        int getcin(); // methode qui retourne le num de cin de la personne

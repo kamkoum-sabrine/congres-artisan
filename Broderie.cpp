@@ -40,6 +40,21 @@ Broderie  & Broderie::operator=(const Broderie& b) {
 void Broderie::ajouterTissus(string*  tissus){
     tissusUtilises.push_back(tissus);
 }
+void Broderie::saisirBroderie()
+{
+    cout<<endl<<"-------Saisir broderie-----------"<<endl;
+    Creation::saisirCreation();
+    int nbTissus;
+    cout<<"saisir le nombre de tissus utilises :  "<<endl;
+    cin>>nbTissus;
+    for(int i=0;i<nbTissus;i++)
+    {
+        string tissus;
+        cout<<"saisir le tissus numero : "<<i+1<<endl;
+        std::cin>>tissus;
+        tissusUtilises.push_back(&tissus);
+    }
+}
 void Broderie::afficher()
 {
     ///Creation::afficher();

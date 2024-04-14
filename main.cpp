@@ -18,9 +18,10 @@ using namespace std;
 int main()
 {
     Creation *C1;
-    C1 = new Creation(123,"Art","c'est une creation de type art");
-    C1->ajouterPhoto("image.png");
-    C1->ajouterPhoto("image.jpeg");
+    C1 = new Creation();
+  ///  C1->saisirCreation();
+    ///C1->ajouterPhoto("image.png");
+    ///C1->ajouterPhoto("image.jpeg");
     ///cout<<*C1;
 
    /** C1->afficherCreation();
@@ -28,7 +29,8 @@ int main()
     C1->afficherCreation();**/
 
    Sculpture *S1;
-    string nom = C1->getNom();
+   S1 = new Sculpture();
+    /**string nom = C1->getNom();
     string description = C1->getDescription();
     int id = C1->getId();
     vector<string> photos = C1->getPhotos();
@@ -41,19 +43,24 @@ int main()
     S1->ajouterMateriaux(&materiel1);
     cout<<"Donner le materiel à ajouter ";
     cin>>materiel2;
-    S1->ajouterMateriaux(&materiel2);
+    S1->ajouterMateriaux(&materiel2);**/
+    S1->saisirSculpture();
 
 
-
-    Creation *C2;
+   /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
     C2->ajouterPhoto("image.png");
-    C2->ajouterPhoto("image.jpeg");
+    C2->ajouterPhoto("image.jpeg");**/
 
 
 
     Broderie *B1;
-    string nom2 = C2->getNom();
+    B1 = new Broderie();
+    B1->saisirBroderie();
+    Bijouterie *Bij;
+    Bij = new Bijouterie();
+    Bij->saisirBijouterie();
+  /**  string nom2 = C2->getNom();
     string description2 = C2->getDescription();
     int id2 = C2->getId();
     vector<string> photos2 = C2->getPhotos();
@@ -84,35 +91,45 @@ int main()
 
     cout<<"Donner la pierre à ajouter ";
     cin>>pierre2;
-    Bij->ajouterPierresUtilises(&pierre2);
-
-
+    Bij->ajouterPierresUtilises(&pierre2);**/
    ///Artisan *A;
-   personne *P=NULL;
-   /** p=new personne();
-    p->setcin(0000);
-    p->setnom("ahmed");
-    p->settel(20000);
-    p->setadresse("gggg");
-    p->setemail("jjh");
-    p->setprenom("hfhfhf");
 
-    p->saisirlangues();
-    int cin = p->getcin();
-    string nomA = p->getnom();
-    string prenomA = p->getprenom();
-    int telA = p->gettel();
-    string emailA = p->getemail();
-    string adresseA = p->getadresse();
-    vector <string> lA = p->getlangues();**/
-   P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
-   Artisan *A = dynamic_cast<Artisan*>(P);
+   personne *P=NULL;
+
+   ///P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
+   P = new Artisan();
+    Artisan *A = dynamic_cast<Artisan*>(P);
+   A->saisirArtisan();
    ///Creation *C = dynamic_cast<Creation*>(S1);
    A->ajouterCreation(S1);
    A->ajouterCreation(B1);
    A->ajouterCreation(Bij);
     ///A->afficher();
     cout << *A;
+    cout<<endl<<"Affichage creations "<<endl;
+    vector<Creation*> creations = A->getCreations();
+    cout<<"Taille "<<creations.size()<<endl;
+    for (int i=0; i<creations.size();i++){
+        if (typeid(*(creations[i]))== typeid(Sculpture)) {
+         ///Sculpture *s = new Sculpture(*dynamic_cast<Sculpture*>(creations[i]));
+            // Appel de l'opérateur << pour Broderie
+            cout << *(dynamic_cast< Sculpture*>(creations[i]));
+            ///cout << *s;
+        } else if (typeid(*(creations[i]))== typeid(Broderie)) {
+             Broderie *b = new Broderie(*static_cast<Broderie*>(creations[i]));
+             cout << *(dynamic_cast< Broderie*>(creations[i]));
+            // Appel de l'opérateur << pour Sculpture
+            ///cout << b;
+        } else if (typeid(*(creations[i]))== typeid(Bijouterie)) {
+            Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(creations[i]));
+            // Appel de l'opérateur << pour Bijouterie
+            cout << *(dynamic_cast< Bijouterie*>(creations[i]));
+            ///cout << bij;
+        } else {
+            // Cas où le type de création est inconnu ou non géré
+            cout << "Type de création inconnu." << std::endl;
+        }
+    }
    Artisan * A2 = new Artisan();
    A2 = A;
    ///A2->afficher();
