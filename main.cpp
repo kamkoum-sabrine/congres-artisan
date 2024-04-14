@@ -97,41 +97,17 @@ int main()
    personne *P=NULL;
 
    ///P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
-   P = new Artisan();
+    P = new Artisan();
     Artisan *A = dynamic_cast<Artisan*>(P);
-   A->saisirArtisan();
+    A->saisirArtisan();
    ///Creation *C = dynamic_cast<Creation*>(S1);
-   A->ajouterCreation(S1);
-   A->ajouterCreation(B1);
-   A->ajouterCreation(Bij);
+    A->ajouterCreation(S1);
+    A->ajouterCreation(B1);
+    A->ajouterCreation(Bij);
     ///A->afficher();
     cout << *A;
-    cout<<endl<<"Affichage creations "<<endl;
-    vector<Creation*> creations = A->getCreations();
-    cout<<"Taille "<<creations.size()<<endl;
-    for (int i=0; i<creations.size();i++){
-        if (typeid(*(creations[i]))== typeid(Sculpture)) {
-         ///Sculpture *s = new Sculpture(*dynamic_cast<Sculpture*>(creations[i]));
-            // Appel de l'opérateur << pour Broderie
-            cout << *(dynamic_cast< Sculpture*>(creations[i]));
-            ///cout << *s;
-        } else if (typeid(*(creations[i]))== typeid(Broderie)) {
-             Broderie *b = new Broderie(*static_cast<Broderie*>(creations[i]));
-             cout << *(dynamic_cast< Broderie*>(creations[i]));
-            // Appel de l'opérateur << pour Sculpture
-            ///cout << b;
-        } else if (typeid(*(creations[i]))== typeid(Bijouterie)) {
-            Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(creations[i]));
-            // Appel de l'opérateur << pour Bijouterie
-            cout << *(dynamic_cast< Bijouterie*>(creations[i]));
-            ///cout << bij;
-        } else {
-            // Cas où le type de création est inconnu ou non géré
-            cout << "Type de création inconnu." << std::endl;
-        }
-    }
-   Artisan * A2 = new Artisan();
-   A2 = A;
-   ///A2->afficher();
-   cout << *A2;
+    Artisan * A2 = new Artisan();
+    A2 = A;
+    ///A2->afficher();
+    cout << *A2;
 }

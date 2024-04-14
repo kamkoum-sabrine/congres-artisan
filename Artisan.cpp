@@ -141,31 +141,57 @@ std::ostream& operator<<(std::ostream& o,const Artisan& a )
      /// static_cast<const personne&>(a) << o
      o << static_cast<const personne &>(a);
     o<<"Specialite : "<<a.specialite<<endl;
-    /**o<<"Affichage des creations : "<<endl;
+    o<<"Affichage des creations : "<<endl;
     o<<"Taille creations "<<a.creations.size()<<endl;
     for(int i =0;i<a.creations.size();i++)
     {
         o<<"Creation n:"<<i+1<<endl;
-        if (typeid(*(a.creations[i]))== typeid(Broderie)){
-             Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
-             cout << (*b);
+        /** if (Broderie* broderie = dynamic_cast<Broderie*>(a.creations[i])) {
+             Broderie* broderie = dynamic_cast<Broderie*>(a.creations[i]);
+            // Appel de l'opérateur << pour Broderie
+            ///o << *broderie;
+            broderie->afficher();
+
+        } else if (Sculpture* sculpture = dynamic_cast<Sculpture*>(a.creations[i])) {
+            // Appel de l'opérateur << pour Sculpture
+            Sculpture* sculpture = dynamic_cast<Sculpture*>(a.creations[i]);
+            ///o << *sculpture;
+            sculpture->afficher();
+        } else if (Bijouterie* bijouterie = dynamic_cast<Bijouterie*>(a.creations[i])) {
+            // Appel de l'opérateur << pour Bijouterie
+            Bijouterie* bijouterie = dynamic_cast<Bijouterie*>(a.creations[i]);
+            ///o << *bijouterie;
+            bijouterie->afficher();
+        } else {
+            // Cas où le type de création est inconnu ou non géré
+            o << "Type de création inconnu." << std::endl;
+        }
+    }**/
+        /**if (typeid(*(a.creations[i]))== typeid(Broderie)){
+             ///Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
+             ///o << (*b);
+             Broderie *b = new Broderie (*(static_cast< Broderie*>(a.creations[i])));
+             o<<"Id ba3d dynamic cast "<<b->getId()<<endl;
+             o << *(static_cast< Broderie*>(a.creations[i]));
              ///b->afficher();
          }
          else {
              if (typeid(*(a.creations[i]))== typeid(Sculpture)){
-             Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
+            /// Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
             /// s->afficher();
-            cout << (*s);
+            ///o << (*s);
+            o << *(static_cast< Sculpture*>(a.creations[i]));
              }
              else {
-                Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
+                ///Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
                 ///bij->afficher();
-                cout << (*bij);
+                ///o << (*bij);
+                o << *(static_cast< Bijouterie*>(a.creations[i]));
              }
          }**/
-        ///cout << ((*a.creations[i]));
+    cout << ((*a.creations[i]));
 
-   /// }
+   }
     return o;
 }
 

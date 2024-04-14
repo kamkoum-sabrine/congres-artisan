@@ -71,6 +71,7 @@ std::ostream& operator<<(std::ostream& o, const Broderie& c )
 
     //cout<<c;
     o << static_cast<const Creation &>(c);
+   /// Broderie *b = new Broderie( dynamic_cast<const Broderie &>(c));
     o<<"Affichage des tissus : "<<endl;
     for(int i =0;i<c.tissusUtilises.size();i++)
     {
