@@ -14,9 +14,18 @@
 #include "Broderie.cpp"
 #include "Bijouterie.h"
 #include "Bijouterie.cpp"
+#include "Employe.h"
+#include "Employe.cpp"
 using namespace std;
 int main()
 {
+
+    personne *P1=NULL;
+
+   P1 = new Employe();
+    Employe *E = dynamic_cast<Employe*>(P1);
+    ///A->saisirArtisan();
+    cin >> *E;
     Creation *C1;
     C1 = new Creation();
   ///  C1->saisirCreation();
@@ -108,9 +117,12 @@ int main()
     A->ajouterCreation(B1);
     A->ajouterCreation(Bij);
     ///A->afficher();
-    cout << *A;
-    Artisan * A2 = new Artisan();
-    A2 = A;
-    ///A2->afficher();
-    cout << *A2;
+    ///cout << *A;
+    personne* parti = new personne();
+    cout<<endl<<"-------Saisir participant------"<<endl;
+    cin >> *parti;
+    E->ajouter_participant(parti);
+
+    E->ajouter_artisan(A);
+    cout<<*E;
 }

@@ -4,11 +4,15 @@
 using namespace std;
 stand::stand()
 {
+
+
+}
+void stand::saisir_stand()
+{
     cout<<"saisir l identifiant du stand : "<<endl;
     cin>>id_stand;
     cout<<"saisir l 'emplacement du stand : "<<endl;
     cin>>emplacement;
-
 }
 stand::stand(int id_stand,string emplacement)
 {
@@ -38,7 +42,7 @@ void stand::afficherStand()
     cout<<"l'identifiant de ce stand est : "<<id_stand<<endl;
     cout<<"l'emplacement de ce stand est : "<<emplacement<<endl;
 }
-void stand::editerStand()
+/*void stand::editerStand()
 {
     char reponse,rep;
     do
@@ -56,11 +60,63 @@ void stand::editerStand()
               cin>>emplacement;
               break;
             default :
-               cout<<"Réponse invalide ! "<<endl;
+               cout<<"Rï¿½ponse invalide ! "<<endl;
                 break;
         }
         cout<<"Voulez-vous encore modifier ? O : OUI , N: NON"<<endl;
         cin>>rep;
     }
-    while(rep!='N');
+    while((rep=='O')||(rep=='o'));
+}*/
+void stand::editerStand() {
+    char reponse;
+
+    do {
+        cout << "Que voulez-vous modifier pour ce stand ? I : Identifiant, E : Emplacement" << endl;
+        cin >> reponse;
+
+        switch (toupper(reponse)) {
+            case 'I':
+                cout << "Saisir le nouvel identifiant : ";
+                cin >> id_stand;
+                break;
+            case 'E':
+                cout << "Saisir le nouvel emplacement : ";
+                cin.ignore(); // Ignorer le caractï¿½re de nouvelle ligne restant dans le buffer
+                getline(cin, emplacement);
+                break;
+            default:
+                cout << "Rï¿½ponse invalide !" << endl;
+                continue; // Revenir au dï¿½but de la boucle pour redemander une rï¿½ponse valide
+        }
+
+        do {
+            cout << "Voulez-vous encore modifier ? O : OUI, N : NON" << endl;
+            cin >> reponse;
+
+            if (toupper(reponse) != 'O' && toupper(reponse) != 'N') {
+                cout << "Rï¿½ponse invalide !" << endl;
+            }
+        } while (toupper(reponse) != 'O' && toupper(reponse) != 'N');
+
+    } while (toupper(reponse) == 'O');
+}
+
+
+ostream& operator<<(ostream& o,const stand &s)
+{
+    o<<"Affichage des informations relatives ï¿½ ce stand : "<<endl;
+    o<<"Identifiant du stand :"<<s.id_stand<<endl;
+    o<<"Emplacement du stand : "<<s.emplacement<<endl;
+    return o;
+}
+stand::~stand(){}
+istream& operator>>(istream &i,stand &s)
+{
+    cout<<"Saisir l'identifiant du stand : "<<endl;
+    i>>s.id_stand;
+    cout<<"Saisir l'emplacement du stand : "<<endl;
+    i>>s.emplacement;
+    return i;
+
 }

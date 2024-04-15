@@ -17,8 +17,13 @@ class evaluation
      int getId();
      int getPoints();
      string getDate_evalution();
-     void evaluer(int);
+    // void evaluer(int);
      void editerEvaluation();
+     void afficher_evaluation();
+     void saisir_evaluation();
+     friend ostream& operator<<(ostream&,const evaluation&);
+     friend istream& operator>>(istream&,evaluation&);
+     ~evaluation();
 };
 
 #endif // EVALUATION_H_INCLUDED
