@@ -44,8 +44,8 @@ int main()
     cout<<"Donner le materiel à ajouter ";
     cin>>materiel2;
     S1->ajouterMateriaux(&materiel2);**/
-    S1->saisirSculpture();
-
+    ///S1->saisirSculpture();
+    cin >> *S1;
 
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
@@ -56,10 +56,12 @@ int main()
 
     Broderie *B1;
     B1 = new Broderie();
-    B1->saisirBroderie();
+    ///B1->saisirBroderie();
+    cin >> *B1;
     Bijouterie *Bij;
     Bij = new Bijouterie();
-    Bij->saisirBijouterie();
+    cin >> *Bij;
+    ///Bij->saisirBijouterie();
   /**  string nom2 = C2->getNom();
     string description2 = C2->getDescription();
     int id2 = C2->getId();
@@ -99,7 +101,8 @@ int main()
    ///P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
     P = new Artisan();
     Artisan *A = dynamic_cast<Artisan*>(P);
-    A->saisirArtisan();
+    ///A->saisirArtisan();
+    cin >> *A;
    ///Creation *C = dynamic_cast<Creation*>(S1);
     A->ajouterCreation(S1);
     A->ajouterCreation(B1);

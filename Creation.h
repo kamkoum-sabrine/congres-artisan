@@ -30,6 +30,7 @@ class Creation
        virtual void modifier();
 
        friend std::ostream& operator<<(std::ostream& o, const Creation& c);
+       friend istream& operator>>(istream&, Creation& );
 };
 
 

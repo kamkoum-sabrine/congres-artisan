@@ -81,6 +81,23 @@ std::ostream& operator<<(std::ostream& o, const Broderie& c )
     }
     return o;
 }
+istream& operator>>(istream& in, Broderie& c )
+{
+    cout<<endl<<"------- Saisir Broderie -----------"<<endl;
+    Creation*cr = &c;
+    in>>*cr;
+    int nbTissus;
+    cout<<"saisir le nombre de tissus utilises :  "<<endl;
+    cin>>nbTissus;
+    for(int i=0;i<nbTissus;i++)
+    {
+        string tissus;
+        cout<<"saisir le tissus numero : "<<i+1<<endl;
+        in>>tissus;
+        c.tissusUtilises.push_back(&tissus);
+    }
+    return in;
+}
 void Broderie::modifier()
 {
     cout<<"Mise à jour du broderie"<<endl;

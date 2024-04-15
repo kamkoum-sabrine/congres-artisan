@@ -23,6 +23,7 @@ class Sculpture :public Creation
     virtual void afficher();
     void modifier();
     friend std::ostream& operator<<(std::ostream&, const Sculpture& );
+    friend istream& operator>>(istream&, Sculpture& );
 };
 
 

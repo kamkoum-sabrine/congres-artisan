@@ -5,8 +5,29 @@ using namespace std;
 personne::personne()
 {
 
+    /**cout<<"saisir le numero de cin : "<<endl;
+    cin>>Cin;
+    cout<<"saisir le nom : "<<endl;
+    cin>>nom;
+    cout<<"saisir le prenom : "<<endl;
+    cin>>prenom;
+    cout<<"saisir le num de telephone : "<<endl;
+    cin>>tel;
+    cout<<"saisir l email : "<<endl;
+    cin>>email;
+    cout<<"saisir l adresse : "<<endl;
+    cin>>adresse;
+    cout<<"saisir le nombre de de langues :  "<<endl;
+    cin>>nblangues;
+    for(int i=0;i<nblangues;i++)
+    {
+        string langue;
+        cout<<"saisir la langue numero : "<<i+1<<endl;
+        std::cin>>langue;
+        langues.push_back(langue);}*/
+
 }
-personne::personne(int c,string n,string p ,int t ,string e,string a, int nbLangues)
+personne::personne(int c,string n,string p ,int t ,string e,string a,int nblg)
 {
 
     Cin=c;
@@ -14,12 +35,9 @@ personne::personne(int c,string n,string p ,int t ,string e,string a, int nbLang
     prenom=p;
     tel=t;;
     email=e;
-    adresse=e;
-    /**int nblg;
-    cout<<"saisir le nombre de de langues :  "<<endl;
-    cin>>nblg;**/
-    this->nblangues = nblangues;
-    for(int i=0;i<nblangues;i++)
+    adresse=a;
+    nblangues=nblg;
+   for(int i=0;i<nblangues;i++)
     {
         string langue;
         cout<<"saisir la langue numero : "<<i+1<<endl;
@@ -28,6 +46,30 @@ personne::personne(int c,string n,string p ,int t ,string e,string a, int nbLang
 
 
 
+
+}
+void personne::saisir_personne()
+{
+    cout<<"saisir le numero de cin : "<<endl;
+    cin>>Cin;
+    cout<<"saisir le nom : "<<endl;
+    cin>>nom;
+    cout<<"saisir le prenom : "<<endl;
+    cin>>prenom;
+    cout<<"saisir le num de telephone : "<<endl;
+    cin>>tel;
+    cout<<"saisir l email : "<<endl;
+    cin>>email;
+    cout<<"saisir l adresse : "<<endl;
+    cin>>adresse;
+    cout<<"saisir le nombre de de langues :  "<<endl;
+    cin>>nblangues;
+    for(int i=0;i<nblangues;i++)
+    {
+        string langue;
+        cout<<"saisir la langue numero : "<<i+1<<endl;
+        std::cin>>langue;
+        langues.push_back(langue);}
 }
 personne::personne(const personne &p)
 {
@@ -37,11 +79,11 @@ personne::personne(const personne &p)
     tel=p.tel;
     email=p.email;
     adresse=p.adresse;
-    nblangues = p.nblangues;
-    for(int i=0;i<langues.size();i++)
+    nblangues=p.nblangues;
+    for(int i=0;i<(p.langues).size();i++)
     {
         string langue;
-        langue=langues[i];
+        langue=p.langues[i];
         langues.push_back(langue);
     }
 }/*personne::~personne()
@@ -54,31 +96,41 @@ personne::personne(const personne &p)
 }*/
 int personne::getcin()
 {
+
     return Cin;
 }
 string personne::getnom()
 {
+
     return nom;
 }
 string personne::getprenom()
 {
+    cout<<"le prenom de ce personne est : "<<endl;
     return prenom;
 }
 int personne::gettel()
 {
+    cout<<"le numero de telephone de ce personne est : "<<endl;
     return tel;
 }
 string personne::getemail()
 {
+    cout<<"l'adresse email de ce personne est : "<<endl;
     return email;
 }
 string personne::getadresse()
 {
+    cout<<"l'adresse de ce personne est : "<<endl;
     return adresse;
 }
-vector<string> personne::getlangues()
+void personne::getlangues()
 {
-    return langues;
+    cout<<"Les langues que ce personne maitrisent sont : "<<endl;
+    for(int i=0;i<langues.size();i++)
+    {
+        cout<<"langue "<<i+1<<" : "<<langues[i]<<endl;
+    }
 }
 void personne::setcin(int c)
 {
@@ -108,112 +160,87 @@ void personne::saisirlangues()
 {
     int nblg;
     cout<<"saisir le nombre de de langues :  "<<endl;
-    std::cin>>nblg;
-    for(int i=0;i<nblg;i++)
-    {
-        string langue;
-        cout<<"saisir la langue numero : "<<i+1<<endl;
-        std::cin>>langue;
-        langues.push_back(langue);
-    }
-}
-
-void personne::saisirPersonne()
-{
-    cout<<endl<<"--------- Saisir Personne ---------"<<endl;
-    cout<<"Cin :";
-    cin>>Cin;
-    cout<<"Nom :";
-    cin>>nom;
-    cout<<"Prénom : ";
-    cin>>prenom;
-    cout<<"Numéro de téléphone : ";
-    cin>>tel;
-    cout<<"Adresse email :  ";
-    cin>>email;
-    cout<<"Adresse de résidence : ";
-    cin>>adresse;
-
-    /**int nblg;
-    cout<<"saisir le nombre de de langues :  "<<endl;
     cin>>nblg;
     for(int i=0;i<nblg;i++)
     {
         string langue;
         cout<<"saisir la langue numero : "<<i+1<<endl;
         std::cin>>langue;
-        langues.push_back(langue);
-    }*/
-    cout<<"Nombre de langues :  "<<endl;
-    cin>>nblangues;
-    for(int i=0;i<nblangues;i++)
-    {
-        string langue;
-        cout<<"saisir la langue numero : "<<i+1<<endl;
-        std::cin>>langue;
-        langues.push_back(langue);}
-}
-void personne::afficher()
+        langues.push_back(langue);}}
+
+void personne::afficherPersonne()
 {
-    cout<<"Affichage des informations relatives à ce personne : "<<endl;
+    cout<<"Affichage des informations relatives a ce personne : "<<endl;
     cout<<"Cin : "<<Cin<<endl;
     cout<<"Nom : "<<nom<<endl;
-    cout<<"Prénom : "<<prenom<<endl;
-    cout<<"Numéro de téléphone : "<<tel<<endl;
+    cout<<"Prenom : "<<prenom<<endl;
+    cout<<"Numero de telephone : "<<tel<<endl;
     cout<<"Adresse email :  "<<email<<endl;
-    cout<<"Adresse de résidence : "<<adresse<<endl;
+    cout<<"Adresse de residence : "<<adresse<<endl;
+    cout<<"Nombre de langues : "<<nblangues<<endl;
     getlangues();
 
 }
-std::ostream& operator<<(std::ostream& o, const personne& p)
-///ostream& operator<<(ostream& o, personne& p)
-{
+ void personne::modifier() {
+    char reponse;
 
-    o<<"Affichage des informations relatives à ce personne : "<<endl;
-    o<<"Cin : "<<p.Cin<<endl;
-    o<<"Nom : "<<p.nom<<endl;
-    o<<"Prénom : "<<p.prenom<<endl;
-    o<<"Numéro de téléphone : "<<p.tel<<endl;
-    o<<"Adresse email :  "<<p.email<<endl;
-    o<<"Adresse de résidence : "<<p.adresse<<endl;
-    for(int i=0; i<p.langues.size();i++){
-        o<<p.langues[i];
-    }
-    return o;
-}
-void personne::modifier()
-{
-    char rep,reponse;
-    do
-    {
-        cout<<"Que voulez-vous modifiez ? T :numéro de téléphone , A : adresse de résidence , M : adresse mail  "<<endl;
-        cin>>rep;
-        switch(rep)
-        {
+    do {
+        cout << "Que voulez-vous modifier pour cette personne ?" << endl;
+        cout << "N : Nom, P : Prenom, T : Telephone, E : Email, A : Adresse" << endl;
+        cout << "L : Langues, Q : Quitter" << endl;
+        cin >> reponse;
+
+        switch (toupper(reponse)) {
+            case 'N':
+                cout << "Saisir le nouveau nom : ";
+                cin >> nom;
+                break;
+            case 'P':
+                cout << "Saisir le nouveau prenom : ";
+                cin >> prenom;
+                break;
             case 'T':
-              cout<<"saisir le nouveau numéro de telephone : "<<endl;
-              cin>>tel;
-            break;
+                cout << "Saisir le nouveau numero de telephone : ";
+                cin >> tel;
+                break;
+            case 'E':
+                cout << "Saisir le nouvel email : ";
+                cin >> email;
+                break;
             case 'A':
-             cout<<"saisir la nouvelle adresse de résidence : "<<endl;
-             cin>>adresse;
-             break;
-            case 'M':
-              cout<<"saisie la nouvelle adresse mail : "<<endl;
-              cin>>email;
-            break;
-            default :
-              cout<<"réponse invalide !"<<endl;
-              break;
-
-
+                cout << "Saisir la nouvelle adresse : ";
+                cin >> adresse;
+                break;
+            case 'L':
+                int nbLangues;
+                cout << "Combien de langues voulez-vous ajouter ? : ";
+                cin >> nbLangues;
+                for (int i = 0; i < nbLangues; ++i) {
+                    string langue;
+                    cout << "Saisir la langue " << i + 1 << " : ";
+                    cin >> langue;
+                    langues.push_back(langue);
+                }
+                break;
+            case 'Q':
+                return; // Quitter la methode
+            default:
+                cout << "Reponse invalide !" << endl;
+                continue; // Revenir au debut de la boucle pour redemander une reponse valide
         }
-        cout<<"voulez-vous modifiez encore ? , O : Oui , N : Non "<<endl;
-        cin>>reponse;
 
-    }
-    while(reponse!='N');
+        do {
+            cout << "Voulez-vous encore modifier ? O : OUI, N : NON" << endl;
+            cin >> reponse;
+
+            if (toupper(reponse) != 'O' && toupper(reponse) != 'N') {
+                cout << "Reponse invalide !" << endl;
+            }
+        } while (toupper(reponse) != 'O' && toupper(reponse) != 'N');
+
+    } while (toupper(reponse) == 'O');
 }
+
 void personne::ajouterLangue()
 {
    int nb_langues;
@@ -226,6 +253,83 @@ void personne::ajouterLangue()
       cin>>lang;
       langues.push_back(lang);
   }
+  nblangues=nblangues+nb_langues;
 
 
+}
+void personne::supprimer_langue() {
+    // Vï¿½rifier si la liste des langues est vide
+    if (langues.empty()) {
+        cout << "La liste des langues est vide." << endl;
+        return;
+    }
+
+    // Afficher les langues actuellement disponibles
+    cout << "Langues actuellement disponibles :" << endl;
+    for (size_t i = 0; i < langues.size(); ++i) {
+        cout << i + 1 << ". " << langues[i] << endl;
+    }
+
+    // Demander Ã  l'utilisateur le numero de la langue Ã  supprimer
+    int choix;
+    cout << "Entrez le numero de la langue a supprimer : ";
+    cin >> choix;
+
+    // Verifier si le numero est valide
+    if (choix < 1 || choix > langues.size()) {
+        cout << "Numero invalide. Operation annulee." << endl;
+        return;
+    }
+
+    // Supprimer la langue selectionnee
+    langues.erase(langues.begin() + choix - 1);
+
+    // Mettre Ã  jour nblangues
+    nblangues = langues.size();
+
+    cout << "Langue supprimee avec succes." << endl;
+}
+
+
+ostream& operator<<(ostream& o,const personne &p)
+{
+    o<<"Affichage des informations relatives a ce personne : "<<endl;
+    o<<"Cin : "<<p.Cin<<endl;
+    o<<"Nom : "<<p.nom<<endl;
+    o<<"Prenom : "<<p.prenom<<endl;
+    o<<"Numero de telephone : "<<p.tel<<endl;
+    o<<"Adresse mail : "<<p.email<<endl;
+    o<<"Adresse de vie : "<<p.adresse<<endl;
+    o<<"Nombre de langues : "<<p.nblangues<<endl;
+    o<<"Les langues que ce personne maitrisent sont : "<<endl;
+    for(int i=0;i<(p.langues).size();i++)
+    {
+        o<<"Langue "<<i+1<<" : "<<p.langues[i]<<endl;
+    }
+    return o;
+}
+istream& operator>>(istream &i,personne &p)
+{
+    cout<<"Saisir le numero d'identitÃ© : "<<endl;
+    i>>p.Cin;
+    cout<<"Saisir le nom : "<<endl;
+    i>>p.nom;
+    cout<<"Saisir le prÃ©nom : "<<endl;
+    i>>p.prenom;
+    cout<<"Saisir le numero de telephone : "<<endl;
+    i>>p.tel;
+    cout<<"Saisir l'adresse mail : "<<endl;
+    i>>p.email;
+    cout<<"Saisir l'adresse de vie : "<<endl;
+    i>>p.adresse;
+    cout<<"Saisir le nombre de langues pratiquÃ©es : "<<endl;
+    i>>p.nblangues;
+   for(int j = 0; j < p.nblangues; j++)
+    {
+        string langue;
+        cout << "Saisir la langue " << j + 1 << " : " << endl;
+        i >> langue;
+        p.langues.push_back(langue);
+    }
+    return i ;
 }

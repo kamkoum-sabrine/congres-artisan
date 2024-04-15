@@ -87,6 +87,25 @@ std::ostream& operator<<(std::ostream& o, const Sculpture& s )
     }
     return o;
 }
+istream& operator>>(istream& in, Sculpture& c )
+{
+    cout<<endl<<"-------Saisir sculpture-----------"<<endl;
+    Creation*cr = &c;
+    in>>*cr;
+
+
+    int nbMat;
+    cout<<"saisir le nombre de materiaux :  "<<endl;
+    in>>nbMat;
+    for(int i=0;i<nbMat;i++)
+    {
+        string materiel;
+        cout<<"saisir le materiel numero : "<<i+1<<endl;
+        in>>materiel;
+        c.materiaux.push_back(&materiel);
+    }
+    return in;
+}
 void Sculpture::modifier()
 {
     cout<<"Mise à jour du sculpture"<<endl;

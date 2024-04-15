@@ -25,5 +25,6 @@ class Artisan :public personne
     virtual void afficher();
     void saisirArtisan();
     friend std::ostream& operator<<(std::ostream& os, const Artisan& a);
+    friend istream& operator>>(istream&,Artisan&);
 };
 #endif // ARTISAN_H_INCLUDED

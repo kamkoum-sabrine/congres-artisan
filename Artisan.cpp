@@ -72,7 +72,7 @@ Artisan::~Artisan() {
 void Artisan::saisirArtisan()
 {
     cout<<endl<<"--------- Saisir Artisan --------"<<endl;
-    personne::saisirPersonne();
+    personne::saisir_personne();
     cout<<"Specialite : ";
     cin>>specialite;
     /**cout<<"Saisir les créations :";
@@ -106,7 +106,7 @@ void Artisan::ajouterCreation(Creation*  c){
 }
 void Artisan::afficher()
 {
-    personne::afficher();
+    personne::afficherPersonne();
     cout<<"Specialite : "<<specialite<<endl;
     cout<<"Affichage des creations : "<<endl;
     for(int i =0;i<creations.size();i++)
@@ -221,7 +221,16 @@ std::ostream& operator<<(std::ostream& o,const Artisan& a )
    ///}
     return o;
 }
+istream& operator>>(istream &in, Artisan &a)
+{
+     cout<<endl<<"--------- Saisir Artisan --------"<<endl;
+    // Utiliser la surcharge de l'opérateur >> de la classe personne
+    in >> static_cast<personne&>(a);
+    cout<<"Specialite : ";
+    in >>a.specialite;
 
+    return in;
+}
 /**std::ostream& operator<<(std::ostream& o,const Artisan& a )
 {
     o<<endl<<"-------------"<<"Affichage artisan "<<"------------"<<endl;

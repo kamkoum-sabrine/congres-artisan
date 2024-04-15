@@ -120,6 +120,27 @@ std::ostream& operator<<(std::ostream& o, const Creation& c )
     }**/
     return o;
 }
+istream& operator>>(istream& i, Creation& c )
+{
+    cout<<endl<<"-------Saisir creation-----------"<<endl;
+    cout<<"Id : ";
+    i>>c.id;
+    cout<<"Nom ";
+    i>>c.nom;
+    cout<<"Description : ";
+    i>>c.description;
+    int nbPh;
+    cout<<"Saisir le nombre des photos à ajouter ";
+    i>>nbPh;
+    for(int k=0;k<nbPh;k++)
+    {
+        string photo;
+        cout<<"saisir la photo numero : "<<k+1<<endl;
+        i>>photo;
+        c.photos.push_back(photo);
+    }
+    return i;
+}
 void Creation::modifier()
 {
     cout<<"Mise à jour d'une creation"<<endl;
