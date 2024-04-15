@@ -74,6 +74,7 @@ void Sculpture::afficher()
         cout<<*(materiaux[i])<<endl;
     }
 }
+
 std::ostream& operator<<(std::ostream& o, const Sculpture& s )
 {
 

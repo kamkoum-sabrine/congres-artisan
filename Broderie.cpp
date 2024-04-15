@@ -66,6 +66,7 @@ void Broderie::afficher()
         cout<<*(tissusUtilises[i])<<endl;
     }
 }
+
 std::ostream& operator<<(std::ostream& o, const Broderie& c )
 {
 

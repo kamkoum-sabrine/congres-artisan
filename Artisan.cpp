@@ -88,8 +88,8 @@ void Artisan::saisirArtisan()
     }**/
 }
 void Artisan::ajouterCreation(Creation*  c){
-    ///creations.push_back(c);
-    cout<<endl<<"Ajout Creation "<<c->getId()<<endl;
+    creations.push_back(c);
+   /** cout<<endl<<"Ajout Creation "<<c->getId()<<endl;
      if (typeid(*c)== typeid(Sculpture)){
             this->creations.push_back(new Sculpture(*static_cast<Sculpture*>(c)));
         }
@@ -101,7 +101,8 @@ void Artisan::ajouterCreation(Creation*  c){
             this->creations.push_back(new Bijouterie(*static_cast<Bijouterie*>(c)));
         }
 
-        }
+        }**/
+
 }
 void Artisan::afficher()
 {
@@ -113,7 +114,7 @@ void Artisan::afficher()
         cout<<"Creation n:"<<i+1<<endl;
 
 
-         if (typeid(*(creations[i]))== typeid(Broderie)){
+         /**if (typeid(*(creations[i]))== typeid(Broderie)){
              Broderie *b = new Broderie(*static_cast<Broderie*>(creations[i]));
              b->afficher();
          }
@@ -127,7 +128,10 @@ void Artisan::afficher()
                 bij->afficher();
              }
          }
-         }
+         }**/
+          ///creations[i]->afficher();
+          cout<<*creations[i];
+}
         /** if (typeid(*(creations[i]))== typeid(Sculpture)){
             this->creations->afficher();
         }**/
@@ -142,10 +146,33 @@ std::ostream& operator<<(std::ostream& o,const Artisan& a )
      o << static_cast<const personne &>(a);
     o<<"Specialite : "<<a.specialite<<endl;
     o<<"Affichage des creations : "<<endl;
-    o<<"Taille creations "<<a.creations.size()<<endl;
-    for(int i =0;i<a.creations.size();i++)
+    o<<"Nombre de creations "<<a.creations.size()<<endl;
+     for(int i =0;i<a.creations.size();i++)
     {
         o<<"Creation n:"<<i+1<<endl;
+        o<<*(a.creations[i]);
+    }
+    /**for(int i =0;i<a.creations.size();i++)
+    {
+        o<<"Creation n:"<<i+1<<endl;
+        if (typeid(*(a.creations[i]))== typeid(Broderie)){
+             Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
+             ///b->afficher();
+             o << *b;
+         }
+         else {
+             if (typeid(*(a.creations[i]))== typeid(Sculpture)){
+             Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
+             ///s->afficher();
+             o << *s;
+             }
+             else {
+                Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
+                ///bij->afficher();
+                o << *bij;
+             }
+         }
+         }**/
         /** if (Broderie* broderie = dynamic_cast<Broderie*>(a.creations[i])) {
              Broderie* broderie = dynamic_cast<Broderie*>(a.creations[i]);
             // Appel de l'opérateur << pour Broderie
@@ -189,9 +216,9 @@ std::ostream& operator<<(std::ostream& o,const Artisan& a )
                 o << *(static_cast< Bijouterie*>(a.creations[i]));
              }
          }**/
-    cout << ((*a.creations[i]));
+    ///cout << (*(a.creations[i]));
 
-   }
+   ///}
     return o;
 }
 

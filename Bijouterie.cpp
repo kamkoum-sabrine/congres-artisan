@@ -70,6 +70,7 @@ void Bijouterie::afficher()
         cout<<*(pierresUtilises[i])<<endl;
     }
 }
+
 std::ostream& operator<<(std::ostream& o, const Bijouterie& b )
 {
 
