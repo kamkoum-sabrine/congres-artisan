@@ -29,6 +29,7 @@ class Bijouterie :public Creation
     virtual void afficher();
     void modifier();
     friend std::ostream& operator<<(std::ostream&, const Bijouterie& );
+    friend istream& operator>>(istream&, Bijouterie& );
 };
 
 

@@ -52,10 +52,10 @@ void Bijouterie::saisirBijouterie()
     cin>>nbP;
     for(int i=0;i<nbP;i++)
     {
-        string pierre;
+        string* pierre = new string;
         cout<<"saisir la pierre numero : "<<i+1<<endl;
-        std::cin>>pierre;
-        pierresUtilises.push_back(&pierre);
+        std::cin>>*pierre;
+        pierresUtilises.push_back(pierre);
     }
 }
 void Bijouterie::afficher()
@@ -74,7 +74,7 @@ void Bijouterie::afficher()
 std::ostream& operator<<(std::ostream& o, const Bijouterie& b )
 {
 
-    o << static_cast<const Creation &>(b);
+   /// o << static_cast<const Creation &>(b);
     o<<"Type metal : "<<b.typeMetal<<endl;
     o<<"Affichage des pierres : "<<endl;
     for(int i =0;i<b.pierresUtilises.size();i++)
@@ -176,4 +176,25 @@ void Bijouterie::setPierresUtilises(vector<string*> pierresUtilises)
 {
     this->pierresUtilises = pierresUtilises;
 }
+istream& operator>>(istream& in, Bijouterie& c )
+{
+    cout<<endl<<"-------Saisir Bijouterie-----------"<<endl;
+    Creation*cr = &c;
+    in>>*cr;
 
+    cout<<"Type metal : ";
+    in>>c.typeMetal;
+    int nbP;
+    cout<<"saisir le nombre de pierres utilises :  "<<endl;
+    in>>nbP;
+    for(int i=0;i<nbP;i++)
+    {
+        string* pierre = new string;
+        cout<<"saisir la pierre numero : "<<i+1<<endl;
+        in>>*pierre;
+        c.pierresUtilises.push_back(pierre);
+    }
+
+
+    return in;
+}

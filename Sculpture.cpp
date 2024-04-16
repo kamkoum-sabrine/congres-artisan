@@ -78,7 +78,7 @@ void Sculpture::afficher()
 std::ostream& operator<<(std::ostream& o, const Sculpture& s )
 {
 
-    o << static_cast<const Creation &>(s);
+    ///o << static_cast<const Creation &>(s);
     o<<"Affichage des materiaux : "<<endl;
     for(int i =0;i<s.materiaux.size();i++)
     {

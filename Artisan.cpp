@@ -161,21 +161,23 @@ std::ostream& operator<<(std::ostream& o,const Artisan& a )
     for(int i =0;i<a.creations.size();i++)
     {
         o<<"Creation n:"<<i+1<<endl;
+        o<<*(a. creations[i]);
+
         if (typeid(*(a.creations[i]))== typeid(Broderie)){
              Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
-             b->afficher();
-            /// o << *b;
+            /// b->afficher();
+             o << *b;
          }
          else {
              if (typeid(*(a.creations[i]))== typeid(Sculpture)){
              Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
-             s->afficher();
-             ///o << *s;
+             ///s->afficher();
+             o << *s;
              }
              else {
                 Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
-                bij->afficher();
-               /// o << *bij;
+                ///bij->afficher();
+                o << *bij;
              }
          }
          }
