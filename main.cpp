@@ -16,16 +16,19 @@
 #include "Bijouterie.cpp"
 #include "Employe.h"
 #include "Employe.cpp"
+#include "evaluation.h"
+///#include "evaluation.cpp"
 using namespace std;
 int main()
 {
 
-  /**  personne *P1=NULL;
+   /**personne *P1=NULL;
 
    P1 = new Employe();
     Employe *E = dynamic_cast<Employe*>(P1);
     ///A->saisirArtisan();
-    cin >> *E;**/
+    cin >> *E;
+    cout << *E;**/
     Creation *C1;
     C1 = new Creation();
   ///  C1->saisirCreation();
@@ -55,7 +58,7 @@ int main()
     S1->ajouterMateriaux(&materiel2);**/
     ///S1->saisirSculpture();
     cin >> *S1;
-    cout << *S1;
+
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
     C2->ajouterPhoto("image.png");
@@ -63,15 +66,15 @@ int main()
 
 
 
-    Broderie *B1;
+    /**Broderie *B1;
     B1 = new Broderie();
     ///B1->saisirBroderie();
     cin >> *B1;
     cout << *B1;
     Bijouterie *Bij;
     Bij = new Bijouterie();
-    cin >> *Bij;
-    cout << *Bij;
+    cin >> *Bij;**/
+
     ///Bij->saisirBijouterie();
   /**  string nom2 = C2->getNom();
     string description2 = C2->getDescription();
@@ -109,23 +112,25 @@ int main()
 
    personne *P=NULL;
 
-   ///P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat");
-    P = new Artisan();
+   P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat",1);
+    ///P = new Artisan();
     Artisan *A = dynamic_cast<Artisan*>(P);
     ///A->saisirArtisan();
     cin >> *A;
    ///Creation *C = dynamic_cast<Creation*>(S1);
     A->ajouterCreation(S1);
-    A->ajouterCreation(B1);
-    A->ajouterCreation(Bij);
+    ///A->ajouterCreation(B1);
+    ///A->ajouterCreation(Bij);
     ///A->afficher();
-    cout << endl << "ched ched "<<endl;
-    cout << *A;
+   /// cout << endl << "ched ched "<<endl;
+    ///cout << *A;
     personne* parti = new personne();
     cout<<endl<<"-------Saisir participant------"<<endl;
     cin >> *parti;
+     ///E->ajouter_artisan(A);
    // E->ajouter_participant(parti);
+    evaluation * eva = new evaluation(12.5, *A, *parti);
+    cout<< *eva;
 
-    ///E->ajouter_artisan(A);
    /// cout<<*E;
 }

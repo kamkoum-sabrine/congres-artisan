@@ -1,4 +1,6 @@
 #include"Employe.h"
+#include"personne.h"
+#include"Artisan.h"
 #include<iostream>
 #include<string>
 #include<vector>

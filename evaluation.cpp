@@ -1,12 +1,12 @@
 #include<iostream>
 #include"evaluation.h"
+#include"personne.h"
+#include"Employe.h"
+#include"Artisan.h"
 #include<string>
 using namespace std;
-evaluation::evaluation()
-{
 
-}
-void evaluation::saisir_evaluation()
+/**void evaluation::saisir_evaluation()
 {
     cout<<"saisir l'id de l'evaluation : "<<endl;
     cin>>id_evaluation;
@@ -14,37 +14,15 @@ void evaluation::saisir_evaluation()
     cin>>date_evaluation;
     cout<<"saisir les points correspendants a cet evaluation : "<<endl;
     cin>>points;
-}
-evaluation::evaluation(int i,int p,string d)
+}**/
+evaluation::evaluation(double score,Artisan& artisan, personne& participant)
 {
-    id_evaluation=i;
-    date_evaluation=d;
-    points=p;
+    this->score = score;
+    this->artisan = artisan;
+    this->participant = participant;
+    ///this->employe = employe;
 }
-void evaluation::setId(int id)
-{
-    id_evaluation=id;
-}
-void evaluation::setDate_evaluation(string date)
-{
-    date_evaluation=date;
-}
-void evaluation::setPoints(int point)
-{
-    points=point;
-}
-int evaluation::getId()
-{
-    return id_evaluation;
-}
-int evaluation::getPoints()
-{
-    return points;
-}
-string evaluation::getDate_evalution()
-{
-    return date_evaluation;
-}
+
 void evaluation::editerEvaluation()
 {
     /*char rep,rep2;
@@ -76,19 +54,15 @@ void evaluation::editerEvaluation()
     char reponse;
     do {
         cout << "Que voulez-vous modifier pour cette evaluation ?" << endl;
-        cout << "P : Points, D : Date, Q : Quitter" << endl;
+        cout << "S : Score, Q : Quitter" << endl;
         cin >> reponse;
 
         switch (toupper(reponse)) {
-            case 'P':
-                cout << "Saisir le nouveau nombre de points : ";
-                cin >> points;
+            case 'S':
+                cout << "Saisir le nouveau score : ";
+                cin >> score;
                 break;
-            case 'D':
-                cout << "Saisir la nouvelle date d'evaluation : ";
-                cin.ignore(); // Ignorer le caractere de nouvelle ligne restant dans le buffer
-                getline(cin, date_evaluation);
-                break;
+
             case 'Q':
                 return; // Quitter la methode
             default:
@@ -112,24 +86,24 @@ void evaluation::editerEvaluation()
 
 void evaluation :: afficher_evaluation()
 {
-    cout<<"ID evaluation : "<<id_evaluation<<"points : "<<points<<"Date de l evaluation : "<<date_evaluation<<endl;
+    cout<<"Artisan : "<<artisan<<endl<<"Participant: "<<participant<<endl<<"***Score*** "<<score<<endl;
 }
 ostream& operator<<(ostream& o,const evaluation &e)
 {
     o<<"Affichage des informations relatives a cette evaluation : "<<endl;
-    o<<"Identifiant de l' evaluation :"<<e.id_evaluation<<endl;
-    o<<"Date de l'evaluation : "<<e.date_evaluation<<endl;
-    o<<"Points : "<<e.points<<endl;
+    o<<"Participant : "<<e.participant<<endl;
+    o<<"Artisan : "<<e.artisan<<endl;
+    o<<"score :"<<e.score<<endl;
     return o;
 }
-istream& operator>>(istream &i,evaluation &e)
+/**istream& operator>>(istream &i,evaluation &e)
 {
-    cout<<"Saisir l'identifiant de l'evaluation :" <<endl;
+    cout<<"Ajout d'une evaluation" <<endl;
     i>>e.id_evaluation;
     cout<<"Saisir la date de l'evaluation : "<<endl;
     i>>e.date_evaluation;
     cout<<"Saisir les points de cette evaluation : "<<endl;
     i>>e.points;
     return i ;
-}
+}**/
 evaluation::~evaluation(){}

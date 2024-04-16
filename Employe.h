@@ -1,6 +1,7 @@
 #ifndef EMPLOYE_H_INCLUDED
 #define EMPLOYE_H_INCLUDED
-
+#include"personne.h"
+#include"Artisan.h"
 
 using namespace std;
 class Employe :public personne

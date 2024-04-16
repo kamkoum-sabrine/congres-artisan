@@ -236,6 +236,32 @@ istream& operator>>(istream &in, Artisan &a)
     in >> static_cast<personne&>(a);
     cout<<"Specialite : ";
     in >>a.specialite;
+   /** int nbC;
+    cout<<"saisir le nombre des creations :  "<<endl;
+    in>>nbC;
+    for(int i =0;i<nbC;i++)
+    {
+        cout<<"Creation n:"<<i+1<<endl;
+        in>>*(a. creations[i]);
+
+        if (typeid(*(a.creations[i]))== typeid(Broderie)){
+             Broderie *b = new Broderie(*static_cast<Broderie*>(a.creations[i]));
+            /// b->afficher();
+             in >> *b;
+         }
+         else {
+             if (typeid(*(a.creations[i]))== typeid(Sculpture)){
+             Sculpture *s = new Sculpture(*static_cast<Sculpture*>(a.creations[i]));
+             ///s->afficher();
+             in >> *s;
+             }
+             else {
+                Bijouterie *bij = new Bijouterie(*static_cast<Bijouterie*>(a.creations[i]));
+                ///bij->afficher();
+                in >> *bij;
+             }
+         }
+         }**/
 
     return in;
 }
