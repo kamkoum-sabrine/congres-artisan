@@ -57,10 +57,10 @@ void Sculpture::saisirSculpture()
     cin>>nbMat;
     for(int i=0;i<nbMat;i++)
     {
-        string materiel;
+        string* materiel = new string;
         cout<<"saisir le materiel numero : "<<i+1<<endl;
-        std::cin>>materiel;
-        materiaux.push_back(&materiel);
+        std::cin>>*materiel;
+        materiaux.push_back(materiel);
     }
 }
 void Sculpture::afficher()
@@ -97,12 +97,13 @@ istream& operator>>(istream& in, Sculpture& c )
     int nbMat;
     cout<<"saisir le nombre de materiaux :  "<<endl;
     in>>nbMat;
+
     for(int i=0;i<nbMat;i++)
     {
-        string materiel;
+        string* materiel= new string;
         cout<<"saisir le materiel numero : "<<i+1<<endl;
-        in>>materiel;
-        c.materiaux.push_back(&materiel);
+        in>>*materiel;
+        c.materiaux.push_back(materiel);
     }
     return in;
 }

@@ -248,7 +248,7 @@ void respensable::supprimer_session() {
 
         // Verifier si le numero est valide
         if (numero < 1 || numero > sessions.size()) {
-            cout << "Num�ro de session invalide. Veuillez saisir un num�ro valide." << endl;
+            cout << "Numero de session invalide. Veuillez saisir un num�ro valide." << endl;
         }
     } while (numero < 1 || numero > sessions.size()); // Repeter tant que l'indice est invalide
 

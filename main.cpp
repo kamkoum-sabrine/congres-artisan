@@ -20,12 +20,12 @@ using namespace std;
 int main()
 {
 
-    personne *P1=NULL;
+  /**  personne *P1=NULL;
 
    P1 = new Employe();
     Employe *E = dynamic_cast<Employe*>(P1);
     ///A->saisirArtisan();
-    cin >> *E;
+    cin >> *E;**/
     Creation *C1;
     C1 = new Creation();
   ///  C1->saisirCreation();
@@ -55,7 +55,7 @@ int main()
     S1->ajouterMateriaux(&materiel2);**/
     ///S1->saisirSculpture();
     cin >> *S1;
-
+    cout << *S1;
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
     C2->ajouterPhoto("image.png");
@@ -67,9 +67,11 @@ int main()
     B1 = new Broderie();
     ///B1->saisirBroderie();
     cin >> *B1;
+    cout << *B1;
     Bijouterie *Bij;
     Bij = new Bijouterie();
     cin >> *Bij;
+    cout << *Bij;
     ///Bij->saisirBijouterie();
   /**  string nom2 = C2->getNom();
     string description2 = C2->getDescription();
@@ -117,12 +119,13 @@ int main()
     A->ajouterCreation(B1);
     A->ajouterCreation(Bij);
     ///A->afficher();
-    ///cout << *A;
+    cout << endl << "ched ched "<<endl;
+    cout << *A;
     personne* parti = new personne();
     cout<<endl<<"-------Saisir participant------"<<endl;
     cin >> *parti;
-    E->ajouter_participant(parti);
+   // E->ajouter_participant(parti);
 
-    E->ajouter_artisan(A);
-    cout<<*E;
+    ///E->ajouter_artisan(A);
+   /// cout<<*E;
 }
