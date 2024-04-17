@@ -8,6 +8,8 @@
 #include<string>
 #include<vector>
 #include<typeinfo>
+#include <fstream>
+#include <cstdlib>
 using namespace std;
 Artisan::Artisan()
 {
@@ -379,4 +381,51 @@ void Artisan::setSpecialite(string specialite)
 {
     this->specialite = specialite;
 }
+/**void Artisan::ouvrirFichier(ofstream &es)
+{
+    es.open("artisansDB.txt" );
+    if (! es.is_open()) exit (-1);
+}**/
 
+/**void Artisan::ecrireFichierTexte( std::string& nomFichier,  std::string& contenu) {
+     // Créer un objet ofstream pour ouvrir le fichier en mode ajout (append)
+    ///std::ofstream fichier(nomFichier, ios::app);
+    ofstream fichier;
+    fichier.open(nomFichier);
+    // Vérifier si le fichier est ouvert avec succès
+    if (!fichier.is_open()) {
+        std::cerr << "Impossible d'ouvrir le fichier : " << nomFichier << std::endl;
+        return;
+    }
+
+    // Écrire le contenu dans le fichier
+    fichier << contenu;
+
+    // Fermer le fichier
+    fichier.close();
+}
+**/
+void Artisan::enregistrer()
+{
+     ofstream fichier ("artisansDB.txt",ios::app);
+    if (!fichier)
+        cout << "erreur"<<endl ;
+    fichier<<*this ;
+    fichier.close();
+
+}
+void Artisan::recuperer_fichier(const std::string &txt)
+  {
+       // Déclarer un objet ifstream pour ouvrir le fichier en mode lecture
+        std::ifstream fichier(txt);
+
+    if (!fichier.is_open()) {
+        std::cerr << "Impossible d'ouvrir le fichier : " << txt << std::endl;
+        return;
+    }
+
+    // Lire le contenu du fichier ici
+
+    fichier.close();
+
+  }

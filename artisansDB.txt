@@ -1,0 +1,53 @@
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : sss
+Prenom : sss
+Numero de telephone : 11
+Adresse mail : ss
+Adresse de vie : ss
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : 1
+Langue 2 : ss
+Specialite : 21ss
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives à une création : 
+Id : 1
+Nom : aa
+Description : aa
+Les photos de cette création:
+Photo 0
+aa
+Affichage des materiaux : 
+- Materiel: mat1
+- Materiel: mat2
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : sabr
+Prenom : sabr
+Numero de telephone : 212
+Adresse mail : 21
+Adresse de vie : ss
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : 1
+Langue 2 : ss
+Specialite : 12ss
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives à une création : 
+Id : 1
+Nom : c1
+Description : desc
+Les photos de cette création:
+Photo 0
+aa
+Affichage des materiaux : 
+- Materiel: mat1

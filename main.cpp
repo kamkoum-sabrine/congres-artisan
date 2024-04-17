@@ -18,11 +18,13 @@
 #include "Employe.cpp"
 #include "evaluation.h"
 #include "stand.h"
+#include <fstream>
 
 ///#include "evaluation.cpp"
 using namespace std;
 int main()
 {
+
 
    /**personne *P1=NULL;
 
@@ -68,13 +70,17 @@ int main()
     Artisan *A2 = dynamic_cast<Artisan*>(P2);
     ///A->saisirArtisan();
     cin >> *A2;
-    cout << *A2;
+    ///cout << *A2;
    ///Creation *C = dynamic_cast<Creation*>(S1);
     A2->ajouterCreation(S1);
+    ///A2->ouvrirFichier(f);
+    A2->enregistrer();
+    A2->recuperer_fichier("artisansDB.txt");
     stand *st = new stand();
     cin >> *st;
     cout<<*st;
     st->setArtisan(*A2);
+
     cout << *st;
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");

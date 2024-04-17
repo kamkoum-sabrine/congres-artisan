@@ -1,0 +1,27 @@
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : kamkoum
+Prenom : sabrine
+Numero de telephone : 52906960
+Adresse mail : sabrine@email.com
+Adresse de vie : ras
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : 1
+Langue 2 : 
+Specialite : khayat
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives à une création : 
+Id : 1
+Nom : aa
+Description : aa
+Les photos de cette création:
+Photo 0
+aa
+Affichage des materiaux : 
+- Materiel: mat1
+- Materiel: mat2

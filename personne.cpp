@@ -37,12 +37,12 @@ personne::personne(int c,string n,string p ,int t ,string e,string a,int nblg)
     email=e;
     adresse=a;
     nblangues=nblg;
-   for(int i=0;i<nblangues;i++)
+  /** for(int i=0;i<nblangues;i++)
     {
         string langue;
         cout<<"saisir la langue numero : "<<i+1<<endl;
         std::cin>>langue;
-        langues.push_back(langue);}
+        langues.push_back(langue);}**/
 
 
 

@@ -3,6 +3,7 @@
 #include<vector>
 #include<string>
 #include<iostream>
+#include <fstream>
 #include"personne.h"
 #include"Creation.h"
 using namespace std;
@@ -26,5 +27,10 @@ class Artisan :public personne
     void saisirArtisan();
     friend std::ostream& operator<<(std::ostream& os, const Artisan& a);
     friend istream& operator>>(istream&,Artisan&);
+    ///void ouvrirFichier(ofstream &es);
+    ///void ecrireArtisansDansFichier(fstream &, Artisan &);
+    void ecrireFichierTexte( std::string&,  std::string&);
+     void enregistrer();
+     void recuperer_fichier(const string&);
 };
 #endif // ARTISAN_H_INCLUDED
