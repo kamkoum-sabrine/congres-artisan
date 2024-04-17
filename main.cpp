@@ -19,12 +19,36 @@
 #include "evaluation.h"
 #include "stand.h"
 #include <fstream>
-
+#include <cstdlib>
 ///#include "evaluation.cpp"
 using namespace std;
 int main()
 {
+    char actor;
+    do {
 
+    cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
+    cout<<"Vous etes connecte en tant : "<<endl<<endl<<"R: Responsable d'organisation."<<endl<<"E: Employe."<<endl<<"Q: Quitter."<<endl;
+    cin>>actor;
+    switch (toupper(actor)) {
+            case 'R':
+                cout << endl<<"Bienvenue monsieur le responsable "<< endl;
+
+
+                break;
+            case 'E':
+                cout << endl<<"Bienvenue monsieur le responsable "<< endl;
+
+                break;
+
+            case 'Q':
+                exit; // Quitter la methode
+            default:
+                cout << "Reponse invalide !" << endl;
+
+        }
+
+    }while (toupper(actor) != 'Q');
 
    /**personne *P1=NULL;
 

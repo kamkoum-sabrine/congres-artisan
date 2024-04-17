@@ -72,7 +72,7 @@
 	<iostream>
 	<string>
 
-1713394153 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
+1713397092 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
 	"personne.h"
 	<iostream>
 	<vector>
@@ -94,6 +94,7 @@
 	"evaluation.h"
 	"stand.h"
 	<fstream>
+	<cstdlib>
 
 1713212881 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\personne.h
 	<iostream>
@@ -113,7 +114,7 @@
 	<iostream>
 	"personne.h"
 
-1713212953 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\personne.cpp
+1713395197 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\personne.cpp
 	"personne.h"
 	<iostream>
 	<vector>
@@ -184,7 +185,7 @@
 	"personne.h"
 	"Creation.h"
 
-1713394266 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\artisan.cpp
+1713396219 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\artisan.cpp
 	"Creation.h"
 	"Sculpture.h"
 	"Bijouterie.h"
