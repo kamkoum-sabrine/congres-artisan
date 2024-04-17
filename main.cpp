@@ -75,7 +75,14 @@ int main()
     A2->ajouterCreation(S1);
     ///A2->ouvrirFichier(f);
     A2->enregistrer();
-    A2->recuperer_fichier("artisansDB.txt");
+    ///A2->recuperer_fichier("artisansDB.txt");
+    cout <<"****affichage de contenu de fichier****"<<endl ;
+    ifstream fichier ("artisansDB.txt",ios::app);
+       if (!fichier)
+        cout << "erreur"<<endl ;
+    char ch ;
+    while (fichier.get(ch))
+        cout <<ch;
     stand *st = new stand();
     cin >> *st;
     cout<<*st;

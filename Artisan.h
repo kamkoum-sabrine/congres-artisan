@@ -31,6 +31,6 @@ class Artisan :public personne
     ///void ecrireArtisansDansFichier(fstream &, Artisan &);
     void ecrireFichierTexte( std::string&,  std::string&);
      void enregistrer();
-     void recuperer_fichier(const string&);
+  ///   void recuperer_fichier( string&);
 };
 #endif // ARTISAN_H_INCLUDED

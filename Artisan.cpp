@@ -414,18 +414,15 @@ void Artisan::enregistrer()
     fichier.close();
 
 }
-void Artisan::recuperer_fichier(const std::string &txt)
+/**void Artisan::recuperer_fichier(std::string &txt)
   {
-       // Déclarer un objet ifstream pour ouvrir le fichier en mode lecture
-        std::ifstream fichier(txt);
-
-    if (!fichier.is_open()) {
-        std::cerr << "Impossible d'ouvrir le fichier : " << txt << std::endl;
-        return;
-    }
-
-    // Lire le contenu du fichier ici
+      ifstream fichier (txt,ios::app);
+       if (!fichier)
+        cout << "erreur"<<endl ;
+    cout <<"****affichage de contenu de fichier****"<<endl ;
+    char ch ;
+    while (fichier.get(ch))
+        cout <<ch;
 
     fichier.close();
-
-  }
+  }**/

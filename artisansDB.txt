@@ -51,3 +51,28 @@ Photo 0
 aa
 Affichage des materiaux : 
 - Materiel: mat1
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 159
+Nom : test
+Prenom : test
+Numero de telephone : 2121
+Adresse mail : ddd
+Adresse de vie : ddd
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : dd
+Specialite : dd
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives à une création : 
+Id : 1
+Nom : c3
+Description : c3
+Les photos de cette création:
+Photo 0
+cc
+Affichage des materiaux : 
+- Materiel: cc
