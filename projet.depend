@@ -72,7 +72,7 @@
 	<iostream>
 	<string>
 
-1713307039 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
+1713383444 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
 	"personne.h"
 	<iostream>
 	<vector>
@@ -92,6 +92,7 @@
 	"Employe.h"
 	"Employe.cpp"
 	"evaluation.h"
+	"stand.h"
 
 1713212881 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\personne.h
 	<iostream>
@@ -99,10 +100,11 @@
 	<vector>
 	<iostream>
 
-1713308053 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.h
+1713383444 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.h
 	"Artisan.h"
 	<iostream>
 	<string>
+	<map>
 
 1713213330 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\respensable.h
 	<vector>
@@ -115,10 +117,12 @@
 	<iostream>
 	<vector>
 
-1713214043 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.cpp
+1713382895 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.cpp
 	"stand.h"
 	<iostream>
 	"string"
+	<map>
+	<list>
 
 1713299249 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\respensable.cpp
 	"Respensable.h"
@@ -140,7 +144,7 @@
 	<string>
 	<iostream>
 
-1713376299 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.cpp
+1713376392 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.cpp
 	"Creation.h"
 	<iostream>
 	<string>
@@ -209,4 +213,11 @@
 	"Employe.h"
 	"Artisan.h"
 	<string>
+
+1713382845 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.cpp
+	"stand.h"
+	<iostream>
+	"string"
+	<map>
+	<list>
 

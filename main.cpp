@@ -17,6 +17,8 @@
 #include "Employe.h"
 #include "Employe.cpp"
 #include "evaluation.h"
+#include "stand.h"
+
 ///#include "evaluation.cpp"
 using namespace std;
 int main()
@@ -58,7 +60,22 @@ int main()
     S1->ajouterMateriaux(&materiel2);**/
     ///S1->saisirSculpture();
     cin >> *S1;
-    cout<<*S1;
+    ///cout<<*S1;
+    personne *P2=NULL;
+
+   P2 = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat",1);
+    ///P = new Artisan();
+    Artisan *A2 = dynamic_cast<Artisan*>(P2);
+    ///A->saisirArtisan();
+    cin >> *A2;
+    cout << *A2;
+   ///Creation *C = dynamic_cast<Creation*>(S1);
+    A2->ajouterCreation(S1);
+    stand *st = new stand();
+    cin >> *st;
+    cout<<*st;
+    st->setArtisan(*A2);
+    cout << *st;
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
     C2->ajouterPhoto("image.png");
