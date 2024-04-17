@@ -2,21 +2,22 @@
 #define SCULPTURE_H_INCLUDED
 #include "Creation.h"
 #include<vector>
+#include<list>
 #include<string>
 #include<iostream>
 using namespace std;
 class Sculpture :public Creation
 {
   protected :
-    vector<string*> materiaux;
+    list<string*> materiaux;
   public :
     Sculpture() ;
     Sculpture(int id, string nom, string description);
     Sculpture(const Sculpture &);
     virtual ~Sculpture(){};
     Sculpture & operator=(const Sculpture &);
-    vector<string*> getMateriaux();
-    void setMateriaux(vector<string*>);
+    list<string*> getMateriaux();
+    void setMateriaux(list<string*>);
 
     void ajouterMateriaux(string*);
     void saisirSculpture();

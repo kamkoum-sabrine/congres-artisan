@@ -58,7 +58,7 @@ int main()
     S1->ajouterMateriaux(&materiel2);**/
     ///S1->saisirSculpture();
     cin >> *S1;
-
+    cout<<*S1;
    /** Creation *C2;
     C2 = new Creation(456,"triza","c'est une creation de type broderie");
     C2->ajouterPhoto("image.png");

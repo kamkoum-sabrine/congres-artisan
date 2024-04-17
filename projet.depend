@@ -99,7 +99,8 @@
 	<vector>
 	<iostream>
 
-1713214028 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.h
+1713308053 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\stand.h
+	"Artisan.h"
 	<iostream>
 	<string>
 
@@ -132,13 +133,14 @@
 	<iostream>
 	<vector>
 
-1713212007 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.h
+1713374737 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.h
 	"Creation.h"
 	<vector>
+	<list>
 	<string>
 	<iostream>
 
-1713301403 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.cpp
+1713376299 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\sculpture.cpp
 	"Creation.h"
 	<iostream>
 	<string>
