@@ -1,6 +1,7 @@
 #include"Employe.h"
 #include"personne.h"
 #include"Artisan.h"
+#include"Participant.h"
 #include<iostream>
 #include<string>
 #include<vector>
@@ -29,7 +30,7 @@ void Employe::saisir_employe()
     int nbParticipants;
     cout<<"saisir le nombre des participants : "<<endl;
     cin>>nbParticipants;
-    personne *p = new personne();
+    Participant *p = new Participant();
     for (int i = 0; i < nbParticipants; i++) {
         ///int* session = new int; // Allouer dynamiquement un nouvel entier
         cout << "Saisir le participant numero " << i+1 << " : ";
@@ -55,37 +56,73 @@ void Employe::afficherPersonne()
     }
 }
 void Employe::modifier() {
-    // Appeler d'abord la methode modifier de la classe de base personne
-    personne::modifier();
-
-    char reponse;
-    do {
-        cout << "Que voulez-vous modifier pour cet employe ?" << endl;
-        cout << "G : Num Guichet, Q : Quitter" << endl;
-        cin >> reponse;
-
-        switch (toupper(reponse)) {
-            case 'G':
-                cout << "Saisir le nouveau num guichet : ";
-                cin >> numGuichet;
-                break;
-
-            case 'Q':
-                return; // Quitter la methode
-            default:
-                cout << "Reponse invalide !" << endl;
-        }
-
+    // Demander à l'utilisateur s'il souhaite modifier les informations
+    char choix;
+    cout << "Voulez-vous modifier les informations du responsable ? (o/n) ";
+    cin >> choix;
+    if (choix == 'o' || choix == 'O') {
+        int choixParam;
         do {
-            cout << "Voulez-vous encore modifier ? O : OUI, N : NON" << endl;
-            cin >> reponse;
+            // Demander à l'utilisateur ce qu'il souhaite modifier
+            cout << "Quel paramètre souhaitez-vous modifier ?" << endl;
+            cout << "1. Nom" << endl;
+            cout << "2. Prenom" << endl;
+            cout << "3. Email" << endl;
+            cout << "4. Adresse" << endl;
+            cout << "5. Nombre de logements" << endl;
+            cout << "6. Role" << endl;
+            cout << "7. Tâches" << endl;
+            cout << "8. Sessions" << endl;
+          //  cout << "9. Langues" << endl;
+            cin >> choixParam;
 
-            if (toupper(reponse) != 'O' && toupper(reponse) != 'N') {
-                cout << "Reponse invalide !" << endl;
+            switch (choixParam) {
+                case 1: {
+                    string nouveauNom;
+                    cout << "Nouveau nom : ";
+                    cin >> nouveauNom;
+                    personne::setnom(nouveauNom);
+                    break;
+                }
+                case 2: {
+                    string nouveauPrenom;
+                    cout << "Nouveau prenom : ";
+                    cin >> nouveauPrenom;
+                    personne::setprenom(nouveauPrenom);
+                    break;
+                }
+                case 3: {
+                    string nouvelEmail;
+                    cout << "Nouvel email : ";
+                    cin >> nouvelEmail;
+                    personne::setemail(nouvelEmail);
+                    break;
+                }
+                case 4: {
+                    string nouvelleAdresse;
+                    cout << "Nouvelle adresse : ";
+                    cin >> nouvelleAdresse;
+                    personne::setadresse(nouvelleAdresse);
+                    break;
+                }
+                case 5: {
+                    int nouveauNbLogements;
+                    cout << "Nouveau nombre de logements : ";
+                    cin >> nouveauNbLogements;
+                   personne::setnblangues(nouveauNbLogements);
+                    break;
+                }
+                case 6: {
+                    cout << "Nouveau numero de guichet : ";
+                    cin >> numGuichet;
+                    break;
+                }
+
+                default:
+                    cout << "Choix invalide. Veuillez saisir à nouveau." << endl;
             }
-        } while (toupper(reponse) != 'O' && toupper(reponse) != 'N');
-
-    } while (toupper(reponse) == 'O');
+        } while (choixParam < 1 || choixParam > 6);
+    }
 }
 
 
@@ -110,7 +147,7 @@ void Employe::ajouter_artisan(Artisan* a)
 {
    artisans.push_back(a);
 }
-void Employe::ajouter_participant(personne* p)
+void Employe::ajouter_participant(Participant* p)
 {
    participants.push_back(p);
 }
@@ -118,7 +155,7 @@ vector<Artisan*> Employe::getArtisans()
 {
     return artisans;
 }
-vector<personne*> Employe::getParticipants()
+vector<Participant*> Employe::getParticipants()
 {
     return participants;
 }
@@ -159,6 +196,11 @@ Employe& Employe::operator=(const Employe &autre) {
         for (int i = 0; i < autre.artisans.size(); ++i) {
             Artisan* newArtisan = new Artisan(*autre.artisans[i]); // Allouer une nouvelle memoire et copier la valeur
             artisans.push_back(newArtisan);
+        }
+        // Copie des nouveax artisans
+        for (int i = 0; i < autre.participants.size(); ++i) {
+            Participant* newParticipant = new Participant(*autre.participants[i]); // Allouer une nouvelle memoire et copier la valeur
+            participants.push_back(newParticipant);
         }
     }
     return *this; // Retourner une reference vers l'objet actuel
@@ -206,7 +248,7 @@ istream& operator>>(istream &in, Employe &e)
     int nbPart;
     in >> nbPart;
     for (int i = 0; i < nbPart; ++i) {
-        personne* participant = new personne();
+        Participant* participant = new Participant();
         cout << "Saisir le participant " << i + 1 << " : ";
         in >> *participant;
         e.participants.push_back(participant);

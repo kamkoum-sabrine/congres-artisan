@@ -3,6 +3,8 @@
 #include"personne.h"
 #include"Employe.h"
 #include"Artisan.h"
+#include"Participant.h"
+#include"Participant.cpp"
 #include<string>
 using namespace std;
 
@@ -15,7 +17,7 @@ using namespace std;
     cout<<"saisir les points correspendants a cet evaluation : "<<endl;
     cin>>points;
 }**/
-evaluation::evaluation(double score,Artisan& artisan, personne& participant)
+evaluation::evaluation(double score,Artisan& artisan, Participant& participant)
 {
     this->score = score;
     this->artisan = artisan;

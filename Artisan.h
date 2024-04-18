@@ -22,7 +22,7 @@ class Artisan :public personne
     void setSpecialite(string);
     vector<Creation*> getCreations();
     void ajouterCreation(Creation*);
-    void editer();
+    void modifier();
     virtual void afficher();
     void saisirArtisan();
     friend std::ostream& operator<<(std::ostream& os, const Artisan& a);
@@ -31,6 +31,7 @@ class Artisan :public personne
     ///void ecrireArtisansDansFichier(fstream &, Artisan &);
     void ecrireFichierTexte( std::string&,  std::string&);
      void enregistrer();
+     int nombreDeCreations() const;
   ///   void recuperer_fichier( string&);
 };
 #endif // ARTISAN_H_INCLUDED

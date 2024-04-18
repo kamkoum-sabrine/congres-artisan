@@ -24,20 +24,106 @@
 using namespace std;
 int main()
 {
-    char actor;
+    cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
+
+    respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
+    int actor;
+    int optionResp, optionEmpl;
     do {
+        cout<<"Vous etes connecte en tant que : "<<endl<<endl<<"1: Responsable d'organisation."<<endl<<"2: Employe."<<endl<<"3: Quitter."<<endl;
+        cin>>actor;
+
+        switch (actor) {
+            case 1:
+                do {
+                    cout << endl<<"Bienvenue monsieur le responsable "<<R->getnom()<<" "<<R->getprenom()<< endl;
+                    cout <<"1- Ajouter des employes "<<endl;
+                    cout <<"2- Organiser stand "<<endl;
+                    cout<<"3- Consulter artisans "<<endl;
+                    cout<<"4- Consulter participants "<<endl;
+                    cout<<"5- Annoncer resultat"<<endl;
+                    cout<<"6- Retour au menu principal"<<endl;
+                    cin>>optionResp;
+
+                    switch (optionResp) {
+                        case 1:
+                             cout<<"Ajout employe"<<endl;
+                             Employe *E = new Employe();
+                             cin>>*E;
+                             cout<<*E;
+
+                        break;
+                        case 2:
+                            cout<<"Organiser stands"<<endl;
+                         break;
+                            break;
+                        case 3:
+                            cout<<"Consulter artisans"<<endl;
+                        break;
+                        case 4:
+                            cout<<"Consulter participants"<<endl;
+                        break;
+                     case 5:
+                            cout<<"Annoncer resultat"<<endl;
+                    case 6 : cout<<"revenir au menu principal"<<endl;
+                            break;
+                        default:
+                            cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                    }
+                } while (optionResp != 6);
+
+
+            case 2:
+                do {
+                    cout<<endl<<"***** MENU Employe *****"<<endl;
+                    cout<<"1- Gerer artisans"<<endl;
+                    cout<<"2- Gerer participants"<<endl;
+                    cout<<"3- Gerer evaluation"<<endl;
+                    cout<<"4- Retour au menu principal"<<endl;
+                    cin>>optionEmpl;
+
+                    switch (optionEmpl) {
+                        case 1:
+                            cout<<"1- Gerer artisans"<<endl;
+                             break;
+
+                        case 2:
+                            cout<<"2- Gerer participants"<<endl;
+                            break;
+                        case 3:
+                            cout<<"3- Gerer evaluation"<<endl;
+                        break;
+                        case 4 : cout<<"revenir au menu principal"<<endl;
+                            break;
+                        default:
+                            cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                    }
+                } while (optionEmpl != 4);
+                break;
+            case 3:
+                cout<<"Au revoir !"<<endl;
+                break;
+            default:
+                cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+        }
+
+
+       }while (actor!= 3);
+    printf("\nFIN\n");
+
+   /** do {
 
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
-    cout<<"Vous etes connecte en tant : "<<endl<<endl<<"R: Responsable d'organisation."<<endl<<"E: Employe."<<endl<<"Q: Quitter."<<endl;
+    cout<<"Vous etes connecte en tant que : "<<endl<<endl<<"R: Responsable d'organisation."<<endl<<"E: Employe."<<endl<<"Q: Quitter."<<endl;
     cin>>actor;
     switch (toupper(actor)) {
             case 'R':
-                cout << endl<<"Bienvenue monsieur le responsable "<< endl;
+                cout << endl<<"Bienvenue monsieur le responsable "<<R->getnom()<<" "<<R->getprenom()<< endl;
 
 
                 break;
             case 'E':
-                cout << endl<<"Bienvenue monsieur le responsable "<< endl;
+                cout << endl<<"Bienvenue monsieur l'employe "<< endl;
 
                 break;
 
@@ -48,7 +134,7 @@ int main()
 
         }
 
-    }while (toupper(actor) != 'Q');
+    }while (toupper(actor) != 'Q');**/
 
    /**personne *P1=NULL;
 
@@ -57,8 +143,8 @@ int main()
     ///A->saisirArtisan();
     cin >> *E;
     cout << *E;**/
-    Creation *C1;
-    C1 = new Creation();
+    ///Creation *C1 =NULL;
+    ///C1 = new Creation();
   ///  C1->saisirCreation();
     ///C1->ajouterPhoto("image.png");
     ///C1->ajouterPhoto("image.jpeg");
@@ -87,7 +173,7 @@ int main()
     ///S1->saisirSculpture();
     cin >> *S1;
     ///cout<<*S1;
-    personne *P2=NULL;
+    Artisan *P2=NULL;
 
    P2 = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat",1);
     ///P = new Artisan();
@@ -164,7 +250,7 @@ int main()
     Bij->ajouterPierresUtilises(&pierre2);**/
    ///Artisan *A;
 
-   personne *P=NULL;
+   Artisan *P=NULL;
 
    P = new Artisan(123, "ahmed","ben ahmed", 123456, "email@email.com", "Bizerte", "khayat",1);
     ///P = new Artisan();
@@ -178,7 +264,7 @@ int main()
     ///A->afficher();
    /// cout << endl << "ched ched "<<endl;
     ///cout << *A;
-    personne* parti = new personne();
+    Participant* parti = new Participant();
     cout<<endl<<"-------Saisir participant------"<<endl;
     cin >> *parti;
      ///E->ajouter_artisan(A);

@@ -309,8 +309,7 @@ istream& operator>>(istream &in, Artisan &a)
     }
     return o;
 }**/
-
-void Artisan::editer()
+void Artisan::modifier()
 {
     cout<<"Mise à jour d'un artisan "<<endl;
    char rep,reponse;
@@ -426,3 +425,8 @@ void Artisan::enregistrer()
 
     fichier.close();
   }**/
+
+// Implémentation de la méthode pour obtenir le nombre de créations pour cet artisan
+int Artisan::nombreDeCreations() const {
+    return creations.size();
+}

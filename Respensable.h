@@ -4,21 +4,29 @@
 #include<string>
 #include<iostream>
 #include"personne.h"
-
+#include"evaluation.h"
+#include<set>
+#include<list>
+#include<string>
+#include<iostream>
 using namespace std;
 class respensable :public personne
 {
-  protected :
+  public :
     string role;
-    vector<int*> sessions;
+    ///vector<int*> sessions;
+    std::set<std::string> tasks;
+     list<int*> sessions;
   public :
     respensable() ;
-    respensable(string role,int c,string n,string p ,int t ,string e,string a,int nblg,vector<int*>);
+    ///respensable(string role,int c,string n,string p ,int t ,string e,string a,int nblg,vector<int*>);
+    respensable(string role,int c,string n,string p ,int t ,string e,string a,int nblg);
     respensable(const respensable &);
     string getrole();
-   vector<int*> getsessions();
+    list<int*> getsessions();
     void setrole(string);
-    void saisir_sessions(vector<int*>);
+    const set<string>& gettasks() const { return tasks; }
+    void saisir_sessions(list<int*>);
     void ajouter_session(int*);
     void supprimer_session();
     void afficherPersonne();
@@ -26,8 +34,11 @@ class respensable :public personne
     ~respensable();
     respensable & operator=(const respensable &);
     void saisir_respensable();
-    friend ostream& operator<<(ostream&,respensable&);
+    ///friend ostream& operator<<(ostream&,respensable&);
+    friend ostream& operator<<(ostream&, const respensable&);
     friend istream& operator>>(istream&,respensable&);
+    int calculerExperience() const;
+    void afficherArtisanGagnant( vector<evaluation>& ) ;
 };
 
 #endif // RESPENSABLE_H_INCLUDED

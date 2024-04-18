@@ -1,6 +1,7 @@
 #ifndef EMPLOYE_H_INCLUDED
 #define EMPLOYE_H_INCLUDED
 #include"personne.h"
+#include"Participant.h"
 #include"Artisan.h"
 
 using namespace std;
@@ -9,21 +10,21 @@ class Employe :public personne
   protected :
     int numGuichet;
     vector<Artisan *> artisans;
-    vector<personne *> participants;
+    vector<Participant *> participants;
   public :
     Employe() ;
     Employe(int numGuichet,int c,string n,string p ,int t ,string e,string a, int nbL);
     Employe(const Employe &);
     int getNumGuichet();
    vector<Artisan*> getArtisans();
-   vector<personne*> getParticipants();
+   vector<Participant*> getParticipants();
     void setNumGuichet(int);
     void setArtisans(vector<Artisan*>);
-    void setParticipants(vector<personne*>);
+    void setParticipants(vector<Participant*>);
    /// void saisir_sessions(vector<int*>);
     void ajouter_artisan(Artisan *);
     ///void supprimer_artisan();
-    void ajouter_participant(personne *);
+    void ajouter_participant(Participant *);
    /// void supprimer_participant();
     void afficherPersonne();
     void modifier();

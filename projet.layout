@@ -2,66 +2,66 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="Artisan.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="9252" topLine="258" />
+		<Cursor position="227" topLine="0" />
 	</File>
 	<File name="Artisan.h" open="1" top="0" tabpos="3">
-		<Cursor position="819" topLine="12" />
+		<Cursor position="1039" topLine="20" />
 	</File>
 	<File name="Bijouterie.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="2190" topLine="65" />
 	</File>
 	<File name="Bijouterie.h" open="1" top="0" tabpos="8">
-		<Cursor position="900" topLine="15" />
+		<Cursor position="315" topLine="0" />
 	</File>
 	<File name="Broderie.cpp" open="1" top="0" tabpos="15">
 		<Cursor position="1959" topLine="67" />
 	</File>
 	<File name="Broderie.h" open="1" top="0" tabpos="7">
-		<Cursor position="862" topLine="3" />
+		<Cursor position="862" topLine="0" />
 	</File>
 	<File name="Creation.cpp" open="1" top="0" tabpos="10">
 		<Cursor position="3480" topLine="132" />
 	</File>
 	<File name="Creation.h" open="1" top="0" tabpos="12">
-		<Cursor position="1114" topLine="18" />
+		<Cursor position="1114" topLine="0" />
 	</File>
 	<File name="Employe.cpp" open="1" top="0" tabpos="21">
-		<Cursor position="6149" topLine="198" />
+		<Cursor position="6149" topLine="0" />
 	</File>
 	<File name="Employe.h" open="1" top="0" tabpos="20">
-		<Cursor position="97" topLine="0" />
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="Respensable.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="10267" topLine="320" />
+	<File name="Respensable.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="10386" topLine="320" />
 	</File>
 	<File name="Respensable.h" open="1" top="0" tabpos="5">
 		<Cursor position="900" topLine="12" />
 	</File>
 	<File name="Sculpture.cpp" open="1" top="0" tabpos="14">
-		<Cursor position="2665" topLine="90" />
+		<Cursor position="3382" topLine="91" />
 	</File>
 	<File name="Sculpture.h" open="1" top="0" tabpos="13">
-		<Cursor position="430" topLine="0" />
+		<Cursor position="505" topLine="12" />
 	</File>
 	<File name="evaluation.cpp" open="1" top="0" tabpos="17">
 		<Cursor position="2825" topLine="83" />
 	</File>
 	<File name="evaluation.h" open="1" top="0" tabpos="16">
-		<Cursor position="919" topLine="28" />
+		<Cursor position="247" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="3524" topLine="115" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="579" topLine="45" />
 	</File>
 	<File name="personne.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="8870" topLine="308" />
+		<Cursor position="6168" topLine="228" />
 	</File>
 	<File name="personne.h" open="1" top="0" tabpos="6">
 		<Cursor position="902" topLine="24" />
 	</File>
 	<File name="stand.cpp" open="1" top="0" tabpos="19">
-		<Cursor position="3833" topLine="109" />
+		<Cursor position="9298" topLine="235" />
 	</File>
 	<File name="stand.h" open="1" top="0" tabpos="18">
-		<Cursor position="319" topLine="0" />
+		<Cursor position="1286" topLine="27" />
 	</File>
 </CodeBlocks_layout_file>

@@ -2,6 +2,7 @@
 #define EVALUATION_H_INCLUDED
 #include"Employe.h"
 #include"Artisan.h"
+#include"Participant.h"
 #include<iostream>
 #include<string>
 using namespace std;
@@ -9,18 +10,18 @@ class evaluation
 {
    double score;
    Artisan artisan;
-   personne participant;
+   Participant participant;
    ///Employe employe;
    public :
      evaluation(){};
-     evaluation(double,Artisan&, personne&);
+     evaluation(double,Artisan&, Participant&);
      ~evaluation();
      evaluation(const evaluation &);
      evaluation & operator=(const evaluation &);
      void setScore(double score){
         this->score = score;
      }
-     void setParticipant(personne participant){
+     void setParticipant(Participant participant){
         this->participant = participant;
      }
 
@@ -34,7 +35,7 @@ class evaluation
      Artisan getArtisan(){
         return this->artisan;
      }
-     personne getParticipant(){
+     Participant getParticipant(){
         return this->participant;
      }
 

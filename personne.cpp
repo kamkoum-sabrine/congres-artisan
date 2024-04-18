@@ -106,22 +106,18 @@ string personne::getnom()
 }
 string personne::getprenom()
 {
-    cout<<"le prenom de ce personne est : "<<endl;
     return prenom;
 }
 int personne::gettel()
 {
-    cout<<"le numero de telephone de ce personne est : "<<endl;
     return tel;
 }
 string personne::getemail()
 {
-    cout<<"l'adresse email de ce personne est : "<<endl;
     return email;
 }
 string personne::getadresse()
 {
-    cout<<"l'adresse de ce personne est : "<<endl;
     return adresse;
 }
 void personne::getlangues()
@@ -181,7 +177,7 @@ void personne::afficherPersonne()
     getlangues();
 
 }
- void personne::modifier() {
+/** void personne::modifier() {
     char reponse;
 
     do {
@@ -239,8 +235,11 @@ void personne::afficherPersonne()
         } while (toupper(reponse) != 'O' && toupper(reponse) != 'N');
 
     } while (toupper(reponse) == 'O');
+}**/
+void personne::setnblangues(int nblangues)
+{
+    this->nblangues=nblangues;
 }
-
 void personne::ajouterLangue()
 {
    int nb_langues;
