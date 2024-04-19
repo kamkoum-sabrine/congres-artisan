@@ -240,6 +240,7 @@ Participant::~Participant() {}
 
 ostream& operator<<(ostream &o,const Participant &r)
 {
+    o<<"Participant :"<<endl;
     o<<static_cast<const personne&>(r);
     o<<"role : "<<r.role<<endl;
     return o;

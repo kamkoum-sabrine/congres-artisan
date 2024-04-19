@@ -154,9 +154,45 @@ void Employe::ajouter_participant(Participant* p)
 {
    participants.push_back(p);
 }
-void Employe::ajouter_evaluation(evaluation e)
+void Employe::ajouter_evaluation()
 {
-   evaluations.push_back(e);
+    int cinArt,cinPart;
+    int trouveA = 0;
+    int trouveP = 0;
+    Artisan A;
+    Participant P;
+    cout<<"Donner le cin de l'artisan a evaluer ";
+    cin>>cinArt;
+    cout<<"Donner le cin du participant ";
+    cin>>cinPart;
+    for (int i=0;i<artisans.size();i++)
+    {
+        if (artisans[i]->getcin()==cinArt){
+         A = *artisans[i];
+         trouveA = 1;
+        }
+    }
+        for (int i=0;i<participants.size();i++)
+    {
+        if (participants[i]->getcin()==cinPart){
+         P = *participants[i];
+         trouveP = 1;
+        }
+    }
+    if ((trouveA==1)&&(trouveP==1)){
+        evaluation * e = new evaluation();
+        double score;
+        e->setArtisan(A);
+        e->setParticipant(P);
+        cout<<"Donner le score attribue ";
+        cin>>score;
+        e->setScore(score);
+        evaluations.push_back(*e);
+    }
+    else {
+        cout<<"Artisan ou Participant introuvable !"<<endl;
+    }
+
 }
 vector<Artisan*> Employe::getArtisans()
 {

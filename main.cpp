@@ -36,9 +36,10 @@ int main()
     int availableEmp = 0;
     vector<Artisan*> art;
     vector<Participant*> part;
+    vector<Artisan*> artisans;
     if(E->getNumGuichet()==-1) availableEmp = 1;
     else art = E->getArtisans();
-    int actor,gererEmp;
+    int actor,gererEmp,gererArt;
     int optionResp, optionEmpl;
     do {
         cout<<"Vous etes connecte en tant que : "<<endl<<endl<<"1: Responsable d'organisation."<<endl<<"2: Employe."<<endl<<"3: Quitter."<<endl;
@@ -148,14 +149,170 @@ int main()
 
                     switch (optionEmpl) {
                         case 1:
-                            cout<<"1- Gerer artisans"<<endl;
+
+                            do{
+                            cout<<endl<<"***** Gerer artisans *****"<<endl;
+                            cout<<"1- Ajouter"<<endl;
+                            cout<<"2- Consulter"<<endl;
+                            cout<<"3- Modifier"<<endl;
+                            cout<<"4- Afficher contenu fichier"<<endl;
+                            cout<<"0- Retour au menu principal"<<endl;
+                            cin>>gererArt;
+
+                                switch (gererArt){
+                                    case 1:
+
+                                        {int nbArt;
+                                        cout<<endl<<"***** Ajouter *****"<<endl;
+                                        cout<<endl<<"Saisir le nombre des artisans a ajouter "<<endl;
+                                        cin>>nbArt;
+                                        Artisan * A;
+                                        for (int i=0;i<nbArt;i++)
+                                        {
+                                            A = new Artisan();
+                                            cin>>*A;
+                                            E->ajouter_artisan(A);
+                                            A->enregistrer();
+                                        }
+                                        }
+                                    break;
+                                    case 2:
+
+                                       {
+                                        cout<<endl<<"***** Consulter *****"<<endl;
+
+
+                                         artisans = E->getArtisans();
+                                         for (int i=0;i<artisans.size();i++)
+                                         {
+                                             cout<<*artisans[i];
+                                         }
+                                       }
+                                    break;
+                                    case 3:
+                                    {
+                                        int cinArt;
+                                        int trouve=0;
+                                        cout<<endl<<"***** Modifier *****"<<endl;
+                                        cout<<"Saisir le cin de l'artisan à modifier "<<endl;
+                                        cin>>cinArt;
+                                        for (int i=0;i<artisans.size();i++)
+                                        {
+
+                                            if (artisans[i]->getcin()==cinArt){
+                                                cout<<*artisans[i];
+                                                artisans[i]->modifier();
+                                                trouve=1;
+                                            }
+                                        }
+                                        if (trouve==0){
+                                            cout<<"Artisan introuvable !";
+                                        }
+
+                                    }
+
+                                    break;
+                                    case 4:
+                                        {
+                                        cout <<"****affichage de contenu de fichier****"<<endl ;
+                                        ifstream fichier ("artisansDB.txt",ios::app);
+                                           if (!fichier)
+                                            cout << "erreur"<<endl ;
+                                        char ch ;
+                                        while (fichier.get(ch))
+                                            cout <<ch;
+                                        }
+                                    break;
+                                    case 0 : cout<<"revenir au menu responsable"<<endl;
+                                        break;
+                                    default:
+                                        cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                                }
+                            }while(gererArt!=0);
                              break;
 
                         case 2:
-                            cout<<"2- Gerer participants"<<endl;
+
+                            do{
+                            cout<<endl<<"***** Gerer participants *****"<<endl;
+                            cout<<"1- Ajouter"<<endl;
+                            cout<<"2- Consulter"<<endl;
+                            cout<<"3- Modifier"<<endl;
+                            cout<<"0- Retour au menu principal"<<endl;
+                            cin>>gererArt;
+                                switch (gererArt){
+                                    case 1:
+                                    {
+                                        int nbPart;
+                                        cout<<endl<<"***** Ajouter Participants*****"<<endl;
+                                        cout<<endl<<"Saisir le nombre des participants a ajouter "<<endl;
+                                        cin>>nbPart;
+                                        Participant * P;
+                                        for (int i=0;i<nbPart;i++)
+                                        {
+                                            P= new Participant();
+                                            cin>>*P;
+                                            E->ajouter_participant(P);
+                                        }
+                                    }
+                                    break;
+                                    case 2:
+
+                                       {
+                                        cout<<endl<<"***** Consulter Participants*****"<<endl;
+
+
+                                         part = E->getParticipants();
+                                         for (int i=0;i<part.size();i++)
+                                         {
+                                             cout<<*part[i];
+                                         }
+                                       }
+                                    break;
+                                    case 3:
+                                    {
+                                       int cinPart;
+                                        int trouve=0;
+                                        cout<<endl<<"***** Modifier *****"<<endl;
+                                        cout<<"Saisir le cin du participant à modifier "<<endl;
+                                        cin>>cinPart;
+                                        for (int i=0;i<part.size();i++)
+                                        {
+
+                                            if (part[i]->getcin()==cinPart){
+                                                cout<<*part[i];
+                                                part[i]->modifier();
+                                                trouve=1;
+                                            }
+                                        }
+                                        if (trouve==0){
+                                            cout<<"Participant introuvable !";
+                                        }
+
+                                    }
+
+                                    break;
+                                    case 4:
+                                        {
+                                        cout <<"****affichage de contenu de fichier****"<<endl ;
+                                        ifstream fichier ("artisansDB.txt",ios::app);
+                                           if (!fichier)
+                                            cout << "erreur"<<endl ;
+                                        char ch ;
+                                        while (fichier.get(ch))
+                                            cout <<ch;
+                                        }
+                                    break;
+                                    case 0 : cout<<"revenir au menu responsable"<<endl;
+                                        break;
+                                    default:
+                                        cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                                }
+                            }while(gererArt!=0);
                             break;
                         case 3:
                             cout<<"3- Gerer evaluation"<<endl;
+                            E->ajouter_evaluation();
                         break;
                         case 4 : cout<<"revenir au menu principal"<<endl;
                             break;

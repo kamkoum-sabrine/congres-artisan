@@ -76,3 +76,211 @@ Photo 0
 cc
 Affichage des materiaux : 
 - Materiel: cc
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : sabrine
+Prenom : sabrine
+Numero de telephone : 159487
+Adresse mail : sabrine@email.com
+Adresse de vie : ras
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : sabrine
+Prenom : sabrine
+Numero de telephone : 159487
+Adresse mail : sabrine@email.com
+Adresse de vie : ras
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 147
+Nom : sabrine
+Prenom : sabrine
+Numero de telephone : 1254
+Adresse mail : sabrine@email.com
+Adresse de vie : ras
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 147
+Nom : sabrine
+Prenom : sabrine
+Numero de telephone : 1254
+Adresse mail : sabrine@email.com
+Adresse de vie : ras
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 4
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de vie : a
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 30
+Nom : bb
+Prenom : bb
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : a
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Langue 2 : a
+Specialite : a
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 159
+Nom : rr
+Prenom : rr
+Numero de telephone : 1
+Adresse mail : rr
+Adresse de vie : rr
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : rr
+Specialite : rr
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 478
+Nom : ff
+Prenom : ff
+Numero de telephone : 1
+Adresse mail : ff
+Adresse de vie : ff
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : rr
+Langue 2 : ff
+Specialite : ff
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 147
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de vie : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 258
+Nom : bb
+Prenom : bb
+Numero de telephone : 2
+Adresse mail : bb
+Adresse de vie : bb
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : bb
+Specialite : bb
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : arij
+Prenom : arij
+Numero de telephone : 123
+Adresse mail : aaa
+Adresse de vie : aaa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 456
+Nom : modo
+Prenom : modo
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de vie : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : a
+Prenom : a
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : a
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : a
+Specialite : a
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de vie : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 0

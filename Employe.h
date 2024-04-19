@@ -27,7 +27,7 @@ class Employe :public personne
     void setEvaluation(vector<evaluation> evaluations){this->evaluations = evaluations;}
     /// void saisir_sessions(vector<int*>);
     void ajouter_artisan(Artisan *);
-    void ajouter_evaluation(evaluation);
+    void ajouter_evaluation();
     ///void supprimer_artisan();
     void ajouter_participant(Participant *);
    /// void supprimer_participant();
