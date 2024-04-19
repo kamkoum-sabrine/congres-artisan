@@ -16,8 +16,8 @@ class evaluation
      evaluation(){};
      evaluation(double,Artisan&, Participant&);
      ~evaluation();
-     evaluation(const evaluation &);
-     evaluation & operator=(const evaluation &);
+     ///evaluation(const evaluation &);
+     ///evaluation & operator=(const evaluation &);
      void setScore(double score){
         this->score = score;
      }

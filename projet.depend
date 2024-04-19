@@ -65,13 +65,13 @@
 	"evaluation.h"
 	<string>
 
-1713520449 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\evaluation.h
+1713522409 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\evaluation.h
 	"Artisan.h"
 	"Participant.h"
 	<iostream>
 	<string>
 
-1713521123 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
+1713522693 source:f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\main.cpp
 	"personne.h"
 	<iostream>
 	<vector>
@@ -92,6 +92,8 @@
 	"Employe.cpp"
 	"evaluation.h"
 	"stand.h"
+	"Participant.h"
+	"Participant.cpp"
 	<fstream>
 	<cstdlib>
 
@@ -237,8 +239,7 @@
 1713521262 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\participant.h
 	"personne.h"
 
-1713521853 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\participant.cpp
-	"personne.cpp"
+1713521992 f:\1ere ingénieur informatique\semestre 2\poo\projet\projet-c--master\participant.cpp
 	"Participant.h"
 	<iostream>
 	<string>

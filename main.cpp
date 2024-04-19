@@ -19,6 +19,8 @@
 #include "Employe.cpp"
 #include "evaluation.h"
 #include "stand.h"
+#include "Participant.h"
+#include "Participant.cpp"
 #include <fstream>
 #include <cstdlib>
 ///#include "evaluation.cpp"
@@ -28,6 +30,8 @@ int main()
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
 
     respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
+    int sess = 2021;
+    R->ajouter_session(&sess);
     Employe *E = new Employe() ;
     int availableEmp = 0;
     vector<Artisan*> art;
