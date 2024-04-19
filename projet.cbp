@@ -62,6 +62,12 @@
 		<Unit filename="Employe.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Participant.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Participant.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Respensable.cpp" />
 		<Unit filename="Respensable.h" />
 		<Unit filename="Sculpture.cpp">

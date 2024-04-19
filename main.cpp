@@ -27,7 +27,8 @@ int main()
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
 
     respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
-    int actor;
+    Employe *E ;
+    int actor,gererEmp;
     int optionResp, optionEmpl;
     do {
         cout<<"Vous etes connecte en tant que : "<<endl<<endl<<"1: Responsable d'organisation."<<endl<<"2: Employe."<<endl<<"3: Quitter."<<endl;
@@ -37,26 +38,37 @@ int main()
             case 1:
                 do {
                     cout << endl<<"Bienvenue monsieur le responsable "<<R->getnom()<<" "<<R->getprenom()<< endl;
-                    cout <<"1- Ajouter des employes "<<endl;
+                    cout <<"1- Gerer employes "<<endl;
                     cout <<"2- Organiser stand "<<endl;
                     cout<<"3- Consulter artisans "<<endl;
                     cout<<"4- Consulter participants "<<endl;
                     cout<<"5- Annoncer resultat"<<endl;
-                    cout<<"6- Retour au menu principal"<<endl;
+                    cout<<"6- Afficher votre experience professionnelle"<<endl;
+                    cout<<"0- Retour au menu principal"<<endl;
                     cin>>optionResp;
 
                     switch (optionResp) {
                         case 1:
-                             cout<<"Ajout employe"<<endl;
-                             Employe *E = new Employe();
-                             cin>>*E;
-                             cout<<*E;
+                        {
+                            cout<<endl<<"***** Gerer employes *****"<<endl;
+                            cout<<"1- Ajouter"<<endl;
+                            cout<<"2- Consulter"<<endl;
+                            cout<<"3- Supprimer"<<endl;
+                            cout<<"0- Retour au menu principal"<<endl;
+                            cin>>gererEmp;
 
+
+                             E = new Employe();
+
+                            cin>>*E;
+                            cout<<*E;
+                        }
                         break;
                         case 2:
                             cout<<"Organiser stands"<<endl;
+
                          break;
-                            break;
+
                         case 3:
                             cout<<"Consulter artisans"<<endl;
                         break;
@@ -65,12 +77,16 @@ int main()
                         break;
                      case 5:
                             cout<<"Annoncer resultat"<<endl;
-                    case 6 : cout<<"revenir au menu principal"<<endl;
+                         break;
+                     case 6:
+                        cout<<"Afficher votre experience"<<endl;
+                     break;
+                    case 0 : cout<<"revenir au menu principal"<<endl;
                             break;
                         default:
                             cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
                     }
-                } while (optionResp != 6);
+                } while (optionResp != 0);
 
 
             case 2:

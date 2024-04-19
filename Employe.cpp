@@ -232,7 +232,7 @@ istream& operator>>(istream &in, Employe &e)
     in >> e.numGuichet;
 
     // Saisie des artisans
-    cout << "Saisir le nombre des artisans : ";
+   /** cout << "Saisir le nombre des artisans : ";
     int nbArtisans;
     in >> nbArtisans;
     for (int i = 0; i < nbArtisans; ++i) {
@@ -252,7 +252,7 @@ istream& operator>>(istream &in, Employe &e)
         cout << "Saisir le participant " << i + 1 << " : ";
         in >> *participant;
         e.participants.push_back(participant);
-    }
+    }**/
 
 
     return in;
