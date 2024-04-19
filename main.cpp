@@ -4,6 +4,7 @@
 #include<string>
 #include"stand.h"
 #include"Respensable.h"
+///#include"Respensable.cpp"
 #include"Artisan.h"
 #include"Artisan.cpp"
 #include "Creation.h"
@@ -27,7 +28,12 @@ int main()
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
 
     respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
-    Employe *E ;
+    Employe *E = new Employe() ;
+    int availableEmp = 0;
+    vector<Artisan*> art;
+    vector<Participant*> part;
+    if(E->getNumGuichet()==-1) availableEmp = 1;
+    else art = E->getArtisans();
     int actor,gererEmp;
     int optionResp, optionEmpl;
     do {
@@ -39,47 +45,85 @@ int main()
                 do {
                     cout << endl<<"Bienvenue monsieur le responsable "<<R->getnom()<<" "<<R->getprenom()<< endl;
                     cout <<"1- Gerer employes "<<endl;
-                    cout <<"2- Organiser stand "<<endl;
-                    cout<<"3- Consulter artisans "<<endl;
-                    cout<<"4- Consulter participants "<<endl;
-                    cout<<"5- Annoncer resultat"<<endl;
-                    cout<<"6- Afficher votre experience professionnelle"<<endl;
+                    ///cout <<"2- Organiser les stands "<<endl;
+                    cout<<"2- Consulter artisans "<<endl;
+                    cout<<"3- Consulter participants "<<endl;
+                    cout<<"4- Annoncer resultat"<<endl;
+                    cout<<"5- Afficher votre experience professionnelle"<<endl;
                     cout<<"0- Retour au menu principal"<<endl;
                     cin>>optionResp;
 
                     switch (optionResp) {
                         case 1:
                         {
+                            do{
                             cout<<endl<<"***** Gerer employes *****"<<endl;
                             cout<<"1- Ajouter"<<endl;
                             cout<<"2- Consulter"<<endl;
-                            cout<<"3- Supprimer"<<endl;
+                            cout<<"3- Modifier"<<endl;
                             cout<<"0- Retour au menu principal"<<endl;
                             cin>>gererEmp;
 
+                                switch (gererEmp){
+                                    case 1:
 
-                             E = new Employe();
+                                         cout<<endl<<"***** Ajouter *****"<<endl;
+                                        /// E = new Employe();
+                                        cin>>*E;
+                                    break;
+                                    case 2:
 
-                            cin>>*E;
-                            cout<<*E;
+                                         cout<<endl<<"***** Consulter *****"<<endl;
+                                         if(availableEmp = 0) cout<<"Pas d'employe disponible"<<endl;
+                                            else cout<<*E;
+                                    break;
+                                    case 3:
+
+                                        cout<<endl<<"***** Modifier *****"<<endl;
+                                        if(availableEmp = 0) cout<<"Pas d'employe disponible"<<endl;
+                                         else E->modifier();
+                                    break;
+                                    case 0 : cout<<"revenir au menu responsable"<<endl;
+                                        break;
+                                    default:
+                                        cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                                }
+                            }while(gererEmp!=0);
                         }
                         break;
                         case 2:
-                            cout<<"Organiser stands"<<endl;
+                            cout<<"Consulter artisans"<<endl;
+                             if(E->getNumGuichet()==-1) cout<<"Pas d'employe disponible"<<endl;
+                            else
+                            {
+                                for  (int i=0;i<art.size();i++){
+                                    cout<<art[i];
+                                }
+                            }
+                            ///vector<Artisan*> art = E->getArtisans();
 
                          break;
 
                         case 3:
-                            cout<<"Consulter artisans"<<endl;
+                            cout<<"Consulter participants"<<endl;
+                            if(E->getNumGuichet()==-1) cout<<"Pas de participant disponible"<<endl;
+                            else {
+                                for  (int i=0;i<part.size();i++){
+                                    cout<<part[i];
+                                }
+                            }
                         break;
                         case 4:
-                            cout<<"Consulter participants"<<endl;
+                            cout<<"Annoncer resultat"<<endl;
+                            if (E->getEvaluation().size()==0) cout<<"Service non disponible !"<<endl;
+                            else {
+                                vector<evaluation> evaluations = E->getEvaluation();
+                               R->afficherArtisanGagnant(evaluations);
+                            }
                         break;
                      case 5:
-                            cout<<"Annoncer resultat"<<endl;
-                         break;
-                     case 6:
                         cout<<"Afficher votre experience"<<endl;
+                        cout<<"Vous avez "<<R->calculerExperience()<< " ans d'experience dans la planification des congres"<<endl;
                      break;
                     case 0 : cout<<"revenir au menu principal"<<endl;
                             break;
@@ -87,7 +131,7 @@ int main()
                             cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
                     }
                 } while (optionResp != 0);
-
+                break;
 
             case 2:
                 do {

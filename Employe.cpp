@@ -2,12 +2,15 @@
 #include"personne.h"
 #include"Artisan.h"
 #include"Participant.h"
+#include"evaluation.h"
+///#include"evaluation.cpp"
 #include<iostream>
 #include<string>
 #include<vector>
 using namespace std;
 Employe::Employe():personne()
 {
+    numGuichet=-1;
 
 }
 void Employe::saisir_employe()
@@ -58,7 +61,7 @@ void Employe::afficherPersonne()
 void Employe::modifier() {
     // Demander à l'utilisateur s'il souhaite modifier les informations
     char choix;
-    cout << "Voulez-vous modifier les informations du responsable ? (o/n) ";
+    cout << "Voulez-vous modifier les informations de l'employe ? (o/n) ";
     cin >> choix;
     if (choix == 'o' || choix == 'O') {
         int choixParam;
@@ -150,6 +153,10 @@ void Employe::ajouter_artisan(Artisan* a)
 void Employe::ajouter_participant(Participant* p)
 {
    participants.push_back(p);
+}
+void Employe::ajouter_evaluation(evaluation e)
+{
+   evaluations.push_back(e);
 }
 vector<Artisan*> Employe::getArtisans()
 {

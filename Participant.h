@@ -1,5 +1,6 @@
 #ifndef PARTICIPANT_H_INCLUDED
 #define PARTICIPANT_H_INCLUDED
+#include"personne.h"
 using namespace std;
 class Participant :public personne
 {

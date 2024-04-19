@@ -1,10 +1,10 @@
 #include<iostream>
-#include"evaluation.h"
-#include"personne.h"
-#include"Employe.h"
+
+///#include"personne.h"
 #include"Artisan.h"
 #include"Participant.h"
-#include"Participant.cpp"
+///#include"Participant.cpp"
+#include"evaluation.h"
 #include<string>
 using namespace std;
 

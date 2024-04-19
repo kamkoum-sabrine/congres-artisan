@@ -1,6 +1,6 @@
 #ifndef EVALUATION_H_INCLUDED
 #define EVALUATION_H_INCLUDED
-
+#include"Employe.h"
 #include"Artisan.h"
 #include"Participant.h"
 #include<iostream>
@@ -46,7 +46,5 @@ class evaluation
      friend istream& operator>>(istream&,evaluation&);
 
 };
-
-
 
 #endif // EVALUATION_H_INCLUDED
