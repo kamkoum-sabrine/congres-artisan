@@ -31,10 +31,17 @@ int main()
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
     ///vider_fichier("respensableDB.txt");
     respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
-   /// R->enregistrer();
-    ///cout<<"affichage fichier : "<<endl;
+    R->ecrireResponsableDansFichier();
+   /** cout<<"affichage fichier : "<<endl;
+    ifstream fichier1 ("respensableDB.txt",ios::app);
+       if (!fichier1)
+        cout << "erreur"<<endl ;
+    char ch ;
+    while (fichier1.get(ch))
+        cout <<ch;
+    }**/
     ///recuperer_fichier();
-    int sess = 2021;
+   int sess = 2021;
     R->ajouter_session(&sess);
     Employe *E = new Employe() ;
     int availableEmp = 0;
@@ -182,13 +189,13 @@ int main()
                                             int nbCrea,typeCrea;
                                             cout<<"Saisir le nombre des creations ";
                                             cin>>nbCrea;
-                                            for (int k=0;k<nbCrea;i++){
+                                            //for (int k=0;k<nbCrea;i++){
                                                 cout<<endl<<"***** Saisir le type de creation *****"<<endl;
                                                 cout<<"1- Broderie"<<endl;
                                                 cout<<"2- Sculpture"<<endl;
                                                 cout<<"3- Bijouterie"<<endl;
                                                 cin>>typeCrea;
-
+                                                ///cout<<"k = "<<k<<endl;
                                                 switch (typeCrea){
                                                     case 1:
 
@@ -221,7 +228,7 @@ int main()
                                                         }
 
 
-                                            }
+                                            //}
 
                                             E->ajouter_artisan(A);
                                             A->enregistrer();
@@ -398,7 +405,7 @@ int main()
                                             for (int i=0;i<artisans.size();i++)
                                             {
                                                 if (artisans[i]->getcin()==cinArtStand){
-                                                    cout<<*artisans[i];
+                                                    ///cout<<*artisans[i];
                                                     //artisans[i]->modifier();
                                                     S->setArtisan(*artisans[i]);
                                                     trouve=1;
@@ -425,36 +432,8 @@ int main()
                                          }
                                        }
                                     break;
-                                    /**case 3:
-                                    {
-                                        int idStand;
-                                        int trouve=0;
-                                        cout<<endl<<"***** Modifier *****"<<endl;
-                                        cout<<"Saisir l'identifiant du stand à modifier "<<endl;
-                                        cin>>idStand;
-                                        for (int i=0;i<stands.size();i++)
-                                        {
 
-                                            if (stands[i].getId()==idStand){
-                                                cout<<*artisans[i];
-                                                artisans[i]->modifier();
-                                                trouve=1;
-                                            }
-                                        }
-                                        if (trouve==0){
-                                            cout<<"Artisan introuvable !";
-                                        }
-
-                                    }
-
-                                    break;**/
-                                    /**case 3:
-                                        {
-                                        cout <<"**** Verifier stand ouvert ou non ? ****"<<endl ;
-
-                                        }
-                                    break;**/
-                                    case 0 : cout<<"revenir au menu responsable"<<endl;
+                                    case 0 : cout<<"revenir au menu employe"<<endl;
                                         break;
                                     default:
                                         cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;

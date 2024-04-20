@@ -21,10 +21,9 @@ Broderie::Broderie(const Broderie &b)
     }
 }
 Broderie  & Broderie::operator=(const Broderie& b) {
-    if (this != &b) { // Check for self-assignment
-        Creation::operator=(b); // Assign base class members using base class assignment operator
-        // Deep copy creations vector to avoid shallow copying
-        tissusUtilises.clear(); // Clear existing creations to prevent memory leaks
+    if (this != &b) { 
+        Creation::operator=(b); 
+        tissusUtilises.clear(); 
         for (unsigned i=0; i<b.tissusUtilises.size();i++)
         {
             tissusUtilises[i] = b.tissusUtilises[i];
@@ -32,11 +31,7 @@ Broderie  & Broderie::operator=(const Broderie& b) {
     }
     return *this;
 }
-/**Broderie::~Broderie() {
-     for (unsigned i = 0; i <tissusUtilises.size(); ++i) {
-        delete tissusUtilises[i];
-    }
-    }**/
+
 void Broderie::ajouterTissus(string*  tissus){
     tissusUtilises.push_back(tissus);
 }
@@ -57,7 +52,6 @@ void Broderie::saisirBroderie()
 }
 void Broderie::afficher()
 {
-    ///Creation::afficher();
     cout<<*this;
     cout<<"Affichage des tissus : "<<endl;
     for(int i =0;i<tissusUtilises.size();i++)
@@ -69,10 +63,6 @@ void Broderie::afficher()
 
 std::ostream& operator<<(std::ostream& o, const Broderie& c )
 {
-
-    //cout<<c;
-    ///o << static_cast<const Creation &>(c);
-   /// Broderie *b = new Broderie( dynamic_cast<const Broderie &>(c));
     o<<"Affichage des tissus : "<<endl;
     for(int i =0;i<c.tissusUtilises.size();i++)
     {
@@ -100,7 +90,7 @@ istream& operator>>(istream& in, Broderie& c )
 }
 void Broderie::modifier()
 {
-    cout<<"Mise à jour du broderie"<<endl;
+    cout<<"Mise ï¿½ jour du broderie"<<endl;
     char rep,reponse;
     do
     {
@@ -117,7 +107,7 @@ void Broderie::modifier()
             case 'N': {
                 string nouveauNom;
                 cout << "Saisissez le nouveau nom : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouveauNom);
                 nom = nouveauNom;
                 break;
@@ -125,21 +115,21 @@ void Broderie::modifier()
             case 'D': {
                 string nouvelleDescription;
                 cout << "Saisissez la nouvelle description : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore();
                 getline(cin, nouvelleDescription);
                 description = nouvelleDescription;
                 break;
             }
             case 'P': {
                 int position;
-                cout << "Saisissez la position de la photo à modifier : ";
+                cout << "Saisissez la position de la photo ï¿½ modifier : ";
                 cin >> position;
                 if (position < 0 || position >= photos.size()) {
                     cout << "Position invalide" << endl;
                 } else {
                     string nouvellePhoto;
                     cout << "Saisissez la nouvelle photo : ";
-                    cin.ignore(); // Ignore any previous newline character
+                    cin.ignore();
                     getline(cin, nouvellePhoto);
                     photos[position] = nouvellePhoto;
                 }
@@ -147,21 +137,21 @@ void Broderie::modifier()
             }
             case 'T': {
                 int position;
-                cout << "Saisissez la position du tissu à modifier : ";
+                cout << "Saisissez la position du tissu ï¿½ modifier : ";
                 cin >> position;
                 if (position < 0 || position >= tissusUtilises.size()) {
                     cout << "Position invalide" << endl;
                 } else {
                     string nouveauTissu;
                     cout << "Saisissez le nouveau tissu : ";
-                    cin.ignore(); // Ignore any previous newline character
+                    cin.ignore();
                     getline(cin, nouveauTissu);
                     *(tissusUtilises[position]) = nouveauTissu;
                 }
                 break;
             }
             default:
-                cout << "Réponse invalide !" << endl;
+                cout << "Rï¿½ponse invalide !" << endl;
                 break;
         }
         cout<<"voulez-vous modifiez encore ? , O : Oui , N : Non "<<endl;

@@ -22,10 +22,9 @@ Bijouterie::Bijouterie(const Bijouterie &b)
     }
 }
 Bijouterie  & Bijouterie::operator=(const Bijouterie& b) {
-    if (this != &b) { // Check for self-assignment
-        Creation::operator=(b); // Assign base class members using base class assignment operator
-        // Deep copy creations vector to avoid shallow copying
-        pierresUtilises.clear(); // Clear existing creations to prevent memory leaks
+    if (this != &b) { 
+        Creation::operator=(b);
+        pierresUtilises.clear(); 
         for (unsigned i=0; i<b.pierresUtilises.size();i++)
         {
             pierresUtilises[i] = b.pierresUtilises[i];
@@ -33,11 +32,7 @@ Bijouterie  & Bijouterie::operator=(const Bijouterie& b) {
     }
     return *this;
 }
-/**Bijouterie::~Bijouterie() {
-     for (unsigned i = 0; i <pierresUtilises.size(); ++i) {
-        delete pierresUtilises[i];
-    }
-    }**/
+
 void Bijouterie::ajouterPierresUtilises(string*  pierre){
     pierresUtilises.push_back(pierre);
 }
@@ -60,7 +55,6 @@ void Bijouterie::saisirBijouterie()
 }
 void Bijouterie::afficher()
 {
-    ///Creation::afficher();
     cout<<*this;
     cout<<"Type metal : "<<typeMetal<<endl;
     cout<<"Affichage des pierres : "<<endl;
@@ -73,8 +67,6 @@ void Bijouterie::afficher()
 
 std::ostream& operator<<(std::ostream& o, const Bijouterie& b )
 {
-
-   /// o << static_cast<const Creation &>(b);
     o<<"Type metal : "<<b.typeMetal<<endl;
     o<<"Affichage des pierres : "<<endl;
     for(int i =0;i<b.pierresUtilises.size();i++)
@@ -86,7 +78,7 @@ std::ostream& operator<<(std::ostream& o, const Bijouterie& b )
 }
 void Bijouterie::modifier()
 {
-    cout<<"Mise à jour du bijouterie"<<endl;
+    cout<<"Mise ï¿½ jour du bijouterie"<<endl;
     char rep,reponse;
 
     do
@@ -104,7 +96,7 @@ void Bijouterie::modifier()
             case 'N': {
                 string nouveauNom;
                 cout << "Saisissez le nouveau nom : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouveauNom);
                 nom = nouveauNom;
                 break;
@@ -112,21 +104,21 @@ void Bijouterie::modifier()
             case 'D': {
                 string nouvelleDescription;
                 cout << "Saisissez la nouvelle description : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouvelleDescription);
                 description = nouvelleDescription;
                 break;
             }
             case 'P': {
                 int position;
-                cout << "Saisissez la position de la photo à modifier : ";
+                cout << "Saisissez la position de la photo ï¿½ modifier : ";
                 cin >> position;
                 if (position < 0 || position >= photos.size()) {
                     cout << "Position invalide" << endl;
                 } else {
                     string nouvellePhoto;
                     cout << "Saisissez la nouvelle photo : ";
-                    cin.ignore(); // Ignore any previous newline character
+                    cin.ignore();
                     getline(cin, nouvellePhoto);
                     photos[position] = nouvellePhoto;
                 }
@@ -135,14 +127,14 @@ void Bijouterie::modifier()
             case 'M': {
                 string nouveauTypeMetal;
                 cout << "Saisissez le nouveau type metal : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouveauTypeMetal);
                 typeMetal = nouveauTypeMetal;
                 break;
             }
             case 'U': {
                int positionPi;
-                cout << "Saisissez la position du pierre à modifier : ";
+                cout << "Saisissez la position du pierre ï¿½ modifier : ";
                 cout<<"nb pierres "<<pierresUtilises.size()<<endl;
                 cin >> positionPi;
                 if (positionPi < 0 || positionPi >= pierresUtilises.size()) {
@@ -157,7 +149,7 @@ void Bijouterie::modifier()
                 break;
             }
             default:
-                cout << "Réponse invalide !" << endl;
+                cout << "Rï¿½ponse invalide !" << endl;
                 break;
         }
         cout<<"voulez-vous modifiez encore ? , O : Oui , N : Non "<<endl;

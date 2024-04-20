@@ -27,11 +27,7 @@ class Artisan :public personne
     void saisirArtisan();
     friend std::ostream& operator<<(std::ostream& os, const Artisan& a);
     friend istream& operator>>(istream&,Artisan&);
-    ///void ouvrirFichier(ofstream &es);
-    ///void ecrireArtisansDansFichier(fstream &, Artisan &);
-    void ecrireFichierTexte( std::string&,  std::string&);
      void enregistrer();
      int nombreDeCreations() const;
-  ///   void recuperer_fichier( string&);
 };
 #endif // ARTISAN_H_INCLUDED

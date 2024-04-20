@@ -1,0 +1,120 @@
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : Kamkoum
+Prenom : Sabrine
+Numero de telephone : 12654987
+Adresse mail : sabrine@email.com
+Adresse de residence : Bizerte
+Nombre de langues : 3
+Les langues que ce personne maitrisent sont : 
+Role: Chef d'organisation
+Tasks:
+Sessions:

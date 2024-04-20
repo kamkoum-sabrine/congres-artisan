@@ -7,14 +7,7 @@ Sculpture::Sculpture()
 {
 
 }
-/**Sculpture::Sculpture(int nbMateriaux, int id, string nom, string desription):Creation(id, nom, description)
-{
-    cout<<"Nb materiaux "<<nbMateriaux<<endl;
-    this->nbMateriaux = nbMateriaux;
-   /// materiaux = new string[nbMateriaux];
-   /// materiaux.resize(nbMateriaux);
 
-}**/
 Sculpture::Sculpture( int id, string nom, string description)
     : Creation(id, nom, description){
 
@@ -26,33 +19,19 @@ Sculpture::Sculpture(const Sculpture &s)
         string* materiel = new string(**it); // Allouer dynamiquement un nouvel entier et copier la valeur
         materiaux.push_back(materiel);
     }
-
-    /** materiaux.resize(s.materiaux.size());
-    for (unsigned int i=0;i<s.materiaux.size();i++){
-        materiaux[i] = s.materiaux[i];
-    }**/
 }
 Sculpture  & Sculpture::operator=(const Sculpture& s) {
-    if (this != &s) { // Check for self-assignment
-        Creation::operator=(s); // Assign base class members using base class assignment operator
-        // Deep copy creations vector to avoid shallow copying
-        materiaux.clear(); // Clear existing creations to prevent memory leaks
+    if (this != &s) {
+        Creation::operator=(s); 
+        materiaux.clear();
         for (list<string*>::const_iterator it = s.materiaux.begin(); it != s.materiaux.end(); ++it) {
-        string* materiel = new string(**it); // Allouer dynamiquement un nouvel entier et copier la valeur
+        string* materiel = new string(**it);
         materiaux.push_back(materiel);
     }
-       /** for (unsigned i=0; i<s.materiaux.size();i++)
-        {
-            materiaux[i] = s.materiaux[i];
-        }**/
     }
     return *this;
 }
-/**Sculpture::~Sculpture() {
-      for (unsigned i = 0; i < materiaux.size(); ++i) {
-        delete materiaux[i];
-    }
-    }**/
+
 void Sculpture::ajouterMateriaux(string  *materiel){
     materiaux.push_back(materiel);
 }
@@ -74,16 +53,10 @@ void Sculpture::saisirSculpture()
 }
 void Sculpture::afficher()
 {
-    ///Creation::afficher();
     cout<<*this;
     cout<<"Affichage des materiaux : "<<endl;
-    /**for(int i =0;i<materiaux.size();i++)
-    {
-        cout<<"Materiel n:"<<i+1<<endl;
-        cout<<*(materiaux[i])<<endl;
-    }**/
     int i = 1;
-    // Déclaration manuelle de l'itérateur
+    // Declaration manuelle de l'iterateur
     list<string*>::const_iterator it;
     for (it = materiaux.begin(); it != materiaux.end(); ++it) {
         cout << "Materiel numero " << i << " : " << **it << endl; // Affichage de la session
@@ -93,15 +66,7 @@ void Sculpture::afficher()
 
 std::ostream& operator<<(std::ostream& o, const Sculpture& s )
 {
-
-    ///o << static_cast<const Creation &>(s);
     o<<"Affichage des materiaux : "<<endl;
-    /**for(int i =0;i<s.materiaux.size();i++)
-    {
-        o<<"Materiel n:"<<i+1<<endl;
-        o<<*(s.materiaux[i])<<endl;
-    }**/
-
     for (list<string*>::const_iterator it = s.materiaux.begin(); it != s.materiaux.end(); ++it) {
         o << "- Materiel: " << **it << endl;
     }
@@ -112,8 +77,6 @@ istream& operator>>(istream& in, Sculpture& c )
     cout<<endl<<"-------Saisir sculpture-----------"<<endl;
     Creation*cr = &c;
     in>>*cr;
-
-
     int nbMat;
     cout<<"saisir le nombre de materiaux :  "<<endl;
     in>>nbMat;
@@ -129,7 +92,7 @@ istream& operator>>(istream& in, Sculpture& c )
 }
 void Sculpture::modifier()
 {
-    cout<<"Mise à jour du sculpture"<<endl;
+    cout<<"Mise ï¿½ jour du sculpture"<<endl;
     char rep,reponse;
     do
     {
@@ -146,7 +109,7 @@ void Sculpture::modifier()
             case 'N': {
                 string nouveauNom;
                 cout << "Saisissez le nouveau nom : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouveauNom);
                 nom = nouveauNom;
                 break;
@@ -154,21 +117,21 @@ void Sculpture::modifier()
             case 'D': {
                 string nouvelleDescription;
                 cout << "Saisissez la nouvelle description : ";
-                cin.ignore(); // Ignore any previous newline character
+                cin.ignore(); 
                 getline(cin, nouvelleDescription);
                 description = nouvelleDescription;
                 break;
             }
             case 'P': {
                 int position;
-                cout << "Saisissez la position de la photo à modifier : ";
+                cout << "Saisissez la position de la photo ï¿½ modifier : ";
                 cin >> position;
                 if (position < 0 || position >= photos.size()) {
                     cout << "Position invalide" << endl;
                 } else {
                     string nouvellePhoto;
                     cout << "Saisissez la nouvelle photo : ";
-                    cin.ignore(); // Ignore any previous newline character
+                    cin.ignore(); 
                     getline(cin, nouvellePhoto);
                     photos[position] = nouvellePhoto;
                 }
@@ -180,7 +143,6 @@ void Sculpture::modifier()
                         delete *it; // Supprimer chaque pointeur de session
                     }
                     materiaux.clear(); // Effacer la liste des sessions
-
                     // Saisir les nouvelles sessions
                     int nbMat;
                     cout << "Saisir le nouveaux nombre de materiel : ";
@@ -192,22 +154,9 @@ void Sculpture::modifier()
                         materiaux.push_back(materiel);
                     }
                     break;
-                /**int position;
-                cout << "Saisissez la position du materiel à modifier : ";
-                cin >> position;
-                if (position < 0 || position >= materiaux.size()) {
-                    cout << "Position invalide" << endl;
-                } else {
-                    string nouveauMateriel;
-                    cout << "Saisissez le nouveau materiel : ";
-                    cin.ignore(); // Ignore any previous newline character
-                    getline(cin, nouveauMateriel);
-                    *(materiaux[position]) = nouveauMateriel;
-                }
-                break;**/
             }
             default:
-                cout << "Réponse invalide !" << endl;
+                cout << "Reponse invalide !" << endl;
                 break;
         }
         cout<<"voulez-vous modifiez encore ? , O : Oui , N : Non "<<endl;

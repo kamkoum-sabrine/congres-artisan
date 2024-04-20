@@ -81,7 +81,7 @@ void Employe::saisir_employe()
     cout<<"saisir le nombre des artisans : "<<endl;
     cin>>nbArtisans;
     Artisan *A = new Artisan();
-    for (int i = 0; i < nbArtisans; i++) {  
+    for (int i = 0; i < nbArtisans; i++) {
         cout << "Saisir l'artisan numero " << i+1 << " : ";
         cin >> *A;
         artisans.push_back(A);
@@ -201,25 +201,31 @@ void Employe::ajouter_evaluation()
     {
         if (artisans[i]->getcin()==cinArt){
          A = *artisans[i];
+         cout<<"l9ith art "<<endl;
          trouveA = 1;
         }
     }
         for (int i=0;i<participants.size();i++)
     {
         if (participants[i]->getcin()==cinPart){
+            cout<<"l9ith part "<<endl;
          P = *participants[i];
          trouveP = 1;
         }
     }
     if ((trouveA==1)&&(trouveP==1)){
-        evaluation * e = new evaluation();
+        cout<<"l9ithom ezouz "<<endl;
+        evaluation  e ;
+        cout<<"neewww "<<endl;
         double score;
-        e->setArtisan(A);
-        e->setParticipant(P);
+        cout<<"A : "<<A.getcin();
+        e.setArtisan(A);
+        e.setParticipant(P);
+        cout<<"seettinneehom "<<endl;
         cout<<"Donner le score attribue ";
         cin>>score;
-        e->setScore(score);
-        evaluations.push_back(*e);
+        e.setScore(score);
+        evaluations.push_back(e);
     }
     else {
         cout<<"Artisan ou Participant introuvable !"<<endl;
@@ -253,7 +259,7 @@ istream& operator>>(istream &in, Employe &e)
     in >> static_cast<personne&>(e);
     cout << "Saisir le num guichet : " << endl;
     in >> e.numGuichet;
-    
+
     return in;
 }
 

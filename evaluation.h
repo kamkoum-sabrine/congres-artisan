@@ -11,13 +11,10 @@ class evaluation
    double score;
    Artisan artisan;
    Participant participant;
-   ///Employe employe;
    public :
      evaluation(){};
      evaluation(double,Artisan&, Participant&);
      ~evaluation();
-     ///evaluation(const evaluation &);
-     ///evaluation & operator=(const evaluation &);
      void setScore(double score){
         this->score = score;
      }
@@ -46,7 +43,4 @@ class evaluation
      friend istream& operator>>(istream&,evaluation&);
 
 };
-
-
-
 #endif // EVALUATION_H_INCLUDED

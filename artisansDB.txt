@@ -413,3 +413,187 @@ Photo 0
 Affichage des tissus : 
 Tissu n:1
 123
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : artisan1
+Prenom : artisan2
+Numero de telephone : 123
+Adresse mail : artisan1@email.com
+Adresse de residence : tunis
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : ar
+Specialite : design
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 456
+Nom : c1
+Description : description
+Les photos de cette creation:
+Photo 0
+image.png
+Affichage des tissus : 
+Tissu n:1
+tissu1
+Tissu n:2
+tissu2
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : artisan1
+Prenom : artisan1
+Numero de telephone : 123
+Adresse mail : artisan1@email.com
+Adresse de residence : tunis
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : ar
+Specialite : design
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 1
+Nom : c1
+Description : description
+Les photos de cette creation:
+Photo 0
+imae.png
+Affichage des materiaux : 
+- Materiel: mat1
+- Materiel: mat2
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de residence : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 45
+Nom : aa
+Description : aa
+Les photos de cette creation:
+Photo 0
+aa
+Affichage des tissus : 
+Tissu n:1
+aa
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : aa
+Prenom : aa
+Numero de telephone : 123
+Adresse mail : aa
+Adresse de residence : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : a
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 4
+Nom : aa
+Description : aa
+Les photos de cette creation:
+Photo 0
+aa
+Affichage des tissus : 
+Tissu n:1
+aa
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : aa
+Prenom : aa
+Numero de telephone : 123
+Adresse mail : aa
+Adresse de residence : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 44
+Nom : aa
+Description : aa
+Les photos de cette creation:
+Photo 0
+aa
+Affichage des tissus : 
+Tissu n:1
+aa
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de residence : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 4
+Nom : aa
+Description : aa
+Les photos de cette creation:
+Photo 0
+a
+Affichage des tissus : 
+Tissu n:1
+aa
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : aa
+Prenom : aa
+Numero de telephone : 1
+Adresse mail : aa
+Adresse de residence : aa
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : aa
+Specialite : aa
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives a une creation : 
+Id : 1
+Nom : aaa
+Description : aa
+Les photos de cette creation:
+Photo 0
+aa
+Affichage des tissus : 
+Tissu n:1
+aa
