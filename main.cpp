@@ -23,13 +23,17 @@
 #include "Participant.cpp"
 #include <fstream>
 #include <cstdlib>
+#include"functions.h"
 ///#include "evaluation.cpp"
 using namespace std;
 int main()
 {
     cout<<endl<<"*****Bienvevue dans votre application de planification du congres d'artisans*****"<<endl<<endl;
-
+    ///vider_fichier("respensableDB.txt");
     respensable *R = new respensable("Chef d'organisation", 123, "Kamkoum", "Sabrine", 12654987, "sabrine@email.com", "Bizerte", 3);
+   /// R->enregistrer();
+    ///cout<<"affichage fichier : "<<endl;
+    ///recuperer_fichier();
     int sess = 2021;
     R->ajouter_session(&sess);
     Employe *E = new Employe() ;
@@ -37,9 +41,10 @@ int main()
     vector<Artisan*> art;
     vector<Participant*> part;
     vector<Artisan*> artisans;
+    vector<stand> stands;
     if(E->getNumGuichet()==-1) availableEmp = 1;
     else art = E->getArtisans();
-    int actor,gererEmp,gererArt;
+    int actor,gererEmp,gererArt,gererStand;
     int optionResp, optionEmpl;
     do {
         cout<<"Vous etes connecte en tant que : "<<endl<<endl<<"1: Responsable d'organisation."<<endl<<"2: Employe."<<endl<<"3: Quitter."<<endl;
@@ -144,7 +149,8 @@ int main()
                     cout<<"1- Gerer artisans"<<endl;
                     cout<<"2- Gerer participants"<<endl;
                     cout<<"3- Gerer evaluation"<<endl;
-                    cout<<"4- Retour au menu principal"<<endl;
+                    cout<<"4- Gerer stands"<<endl;
+                    cout<<"0- Retour au menu principal"<<endl;
                     cin>>optionEmpl;
 
                     switch (optionEmpl) {
@@ -167,10 +173,56 @@ int main()
                                         cout<<endl<<"Saisir le nombre des artisans a ajouter "<<endl;
                                         cin>>nbArt;
                                         Artisan * A;
+                                        artisans = E->getArtisans();
                                         for (int i=0;i<nbArt;i++)
                                         {
+
                                             A = new Artisan();
                                             cin>>*A;
+                                            int nbCrea,typeCrea;
+                                            cout<<"Saisir le nombre des creations ";
+                                            cin>>nbCrea;
+                                            for (int k=0;k<nbCrea;i++){
+                                                cout<<endl<<"***** Saisir le type de creation *****"<<endl;
+                                                cout<<"1- Broderie"<<endl;
+                                                cout<<"2- Sculpture"<<endl;
+                                                cout<<"3- Bijouterie"<<endl;
+                                                cin>>typeCrea;
+
+                                                switch (typeCrea){
+                                                    case 1:
+
+                                                    {
+                                                        Broderie *B = new Broderie();
+                                                        cin>>*B;
+                                                        A->ajouterCreation(B);
+
+                                                    }
+                                                    break;
+                                                    case 2:
+
+                                                       {
+                                                         Sculpture *S= new Sculpture();
+                                                        cin>>*S;
+                                                        A->ajouterCreation(S);
+                                                       }
+                                                    break;
+                                                    case 3:
+                                                    {
+                                                         Bijouterie *B = new Bijouterie();
+                                                        cin>>*B;
+                                                        A->ajouterCreation(B);
+
+                                                    }
+
+                                                    break;
+                                                    default:
+                                                            cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                                                        }
+
+
+                                            }
+
                                             E->ajouter_artisan(A);
                                             A->enregistrer();
                                         }
@@ -314,12 +366,105 @@ int main()
                             cout<<"3- Gerer evaluation"<<endl;
                             E->ajouter_evaluation();
                         break;
-                        case 4 : cout<<"revenir au menu principal"<<endl;
-                            break;
+                        case 4:
+
+                            do{
+                            cout<<endl<<"***** Gerer stands *****"<<endl;
+                            cout<<"1- Ajouter"<<endl;
+                            cout<<"2- Consulter"<<endl;
+                          ///  cout<<"3- Modifier"<<endl;
+                          ///  cout<<"3- Verifier stand ouvert ou non ?"<<endl;
+                            cout<<"0- Retour au menu principal"<<endl;
+                            cin>>gererStand;
+
+                                switch (gererStand){
+                                    case 1:
+
+                                        {
+                                        int nbStand;
+                                        cout<<endl<<"***** Ajouter *****"<<endl;
+                                        cout<<endl<<"Saisir le nombre des stands a ajouter "<<endl;
+                                        cin>>nbStand;
+                                        stand * S;
+
+                                        for (int i=0;i<nbStand;i++)
+                                        {
+                                            S = new stand();
+                                            cin>>*S;
+                                            int cinArtStand;
+                                            cout<<"Saisir le cin d'artisan pour ce stand "<<endl;
+                                            cin>>cinArtStand;
+                                            int trouve=0;
+                                            for (int i=0;i<artisans.size();i++)
+                                            {
+                                                if (artisans[i]->getcin()==cinArtStand){
+                                                    cout<<*artisans[i];
+                                                    //artisans[i]->modifier();
+                                                    S->setArtisan(*artisans[i]);
+                                                    trouve=1;
+                                                }
+                                            }
+                                            if (trouve=0){
+                                                cout<<"Artisan introuvable ! "<<endl;;
+                                            } else {
+                                                stands.push_back(*S);
+                                            }
+                                        }
+                                        }
+                                    break;
+                                    case 2:
+
+                                       {
+                                        cout<<endl<<"***** Consulter *****"<<endl;
+
+
+
+                                         for (int i=0;i<stands.size();i++)
+                                         {
+                                             cout<<stands[i];
+                                         }
+                                       }
+                                    break;
+                                    /**case 3:
+                                    {
+                                        int idStand;
+                                        int trouve=0;
+                                        cout<<endl<<"***** Modifier *****"<<endl;
+                                        cout<<"Saisir l'identifiant du stand à modifier "<<endl;
+                                        cin>>idStand;
+                                        for (int i=0;i<stands.size();i++)
+                                        {
+
+                                            if (stands[i].getId()==idStand){
+                                                cout<<*artisans[i];
+                                                artisans[i]->modifier();
+                                                trouve=1;
+                                            }
+                                        }
+                                        if (trouve==0){
+                                            cout<<"Artisan introuvable !";
+                                        }
+
+                                    }
+
+                                    break;**/
+                                    /**case 3:
+                                        {
+                                        cout <<"**** Verifier stand ouvert ou non ? ****"<<endl ;
+
+                                        }
+                                    break;**/
+                                    case 0 : cout<<"revenir au menu responsable"<<endl;
+                                        break;
+                                    default:
+                                        cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
+                                }
+                            }while(gererArt!=0);
+                             break;
                         default:
                             cout<<"Choix invalide. Veuillez sélectionner une option valide."<<endl;
                     }
-                } while (optionEmpl != 4);
+                } while (optionEmpl != 0);
                 break;
             case 3:
                 cout<<"Au revoir !"<<endl;

@@ -284,3 +284,132 @@ Langue 1 : aa
 Specialite : aa
 Affichage des creations : 
 Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : a
+Prenom : a
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : a
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : a
+Specialite : a
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 11438077
+Nom : art
+Prenom : art
+Numero de telephone : 1
+Adresse mail : art
+Adresse de vie : art
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : art
+Specialite : art
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : a
+Prenom : a
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : a
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 9573800
+Nom : 
+Prenom : 
+Numero de telephone : 1761608040
+Adresse mail : 
+Adresse de vie : 
+Nombre de langues : 0
+Les langues que ce personne maitrisent sont : 
+Specialite : 
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : a
+Prenom : a
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : a
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : a
+Specialite : a
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 2
+Nom : b
+Prenom : b
+Numero de telephone : 1
+Adresse mail : b
+Adresse de vie : b
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : b
+Specialite : b
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 1
+Nom : a
+Prenom : a
+Numero de telephone : 1
+Adresse mail : a
+Adresse de vie : 1
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : a
+Specialite : a
+Affichage des creations : 
+Nombre de creations 0
+
+-------------Affichage artisan ------------
+Affichage des informations relatives a ce personne : 
+Cin : 123
+Nom : 123
+Prenom : 123
+Numero de telephone : 123
+Adresse mail : 123
+Adresse de vie : 123
+Nombre de langues : 1
+Les langues que ce personne maitrisent sont : 
+Langue 1 : 123
+Specialite : 123
+Affichage des creations : 
+Nombre de creations 1
+Creation n:1
+Affichage des informations relatives à une création : 
+Id : 123
+Nom : 123
+Description : 123
+Les photos de cette création:
+Photo 0
+123
+Affichage des tissus : 
+Tissu n:1
+123

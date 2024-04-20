@@ -574,3 +574,13 @@ void respensable::afficherArtisanGagnant( vector<evaluation>& evaluations) {
     }**/
     cout<<artisanGagnant;
 }
+
+void respensable::enregistrer()
+{
+     ofstream fichier ("responsableDB.txt",ios::app);
+    if (!fichier)
+        cout << "erreur"<<endl ;
+    fichier<<*this ;
+    fichier.close();
+
+}

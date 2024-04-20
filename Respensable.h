@@ -39,6 +39,7 @@ class respensable :public personne
     friend istream& operator>>(istream&,respensable&);
     int calculerExperience() const;
     void afficherArtisanGagnant( vector<evaluation>& ) ;
+    void enregistrer();
 };
 
 #endif // RESPENSABLE_H_INCLUDED
