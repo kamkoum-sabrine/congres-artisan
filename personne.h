@@ -16,35 +16,49 @@ class personne
       string email;
       string adresse;
       vector<string> langues;
-      int nblangues; // A vérifier
+      int nblangues;
     public :
-        personne();
-        personne(int,string,string,int,string,string,int);//a verifier concernant l'initialisation de l'attribut langues
-        personne(const personne &);
-        virtual ~personne(){};
-        int getcin(); // methode qui retourne le num de cin de la personne
-        string getnom(); //methode qui retourne le nom de la personne
-        string getprenom(); // methode qui retourne le prenom de la personne
-        int gettel(); //methode qui retourne le numero de telephone de la personne
-        string getemail(); //methode qui retourne l email de la personne
-        string getadresse(); //methode qui retourne l adresse de residence de la personne
-        void getlangues(); //methode qui affiche les langues maitrisées par la personne
-        void setcin(int); //methode qui permet le saisie de num de cin de la personne
-        void setnom(string);//methode qui permet le saisie du nom de la personne
-        void setprenom(string);//méthode qui permet le saisie du prénom de la personne
-        void settel(int);//
-        void setemail(string);
-        void setadresse(string);
+        /** Constructeurs et destructeurs **/
+        personne(){}//constructeur sans parametres
+        personne(int,string,string,int,string,string,int);//constructeur avec parametres
+        personne(const personne &);//constructeur par recopie
+        virtual ~personne(){};//destructeur
+
+        /** Getters **/
+        int getcin(){ return Cin; }
+        string getnom(){ return nom; }
+        string getprenom(){ return prenom; }
+        int gettel(){ return tel; }
+        string getemail(){ return email; }
+        string getadresse(){ return adresse; }
+        vector<string> getlangues(){ return langues; }
+
+        /** Setters **/
+        void setcin(int Cin){ this->Cin = Cin; }
+        void setnom(string nom){ this->nom = nom; }
+        void setprenom(string prenom){ this->prenom = prenom; }
+        void settel(int tel){ this->tel = tel; }
+        void setemail(string email){ this->email = email; }
+        void setadresse(string adresse) { this->adresse = adresse; }
+        void setnblangues(int nblangues) { this->nblangues = nblangues; }
+        /** Methode virtuelle **/
         virtual void afficherPersonne();
-        ///virtual void modifier();
-         virtual void modifier()=0;
-          void setnblangues(int);
-         void saisirlangues();
-         void ajouterLangue();
-         void supprimer_langue( );
-         void saisir_personne();
-         friend ostream& operator<<(ostream&,const personne &);
-         friend istream& operator>>(istream& ,personne&);
+
+        /** Methode virtuelle pure **/
+        virtual void modifier()=0;
+
+        /**Ajouter langues **/
+        void saisirlangues();
+
+        /**Supprimer langue **/
+        void supprimer_langue( );
+
+
+        void saisir_personne();
+
+        /**Surcharge des operateurs**/
+        friend ostream& operator<<(ostream&,const personne &);
+        friend istream& operator>>(istream& ,personne&);
 
 
 };

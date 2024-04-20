@@ -4,7 +4,6 @@
 #include"Participant.h"
 #include"Artisan.h"
 #include"evaluation.h"
-///#include"evaluation.cpp"
 using namespace std;
 class Employe :public personne
 {
@@ -14,28 +13,34 @@ class Employe :public personne
     vector<Participant *> participants;
     vector<evaluation> evaluations;
   public :
-    Employe() ;
-    Employe(int numGuichet,int c,string n,string p ,int t ,string e,string a, int nbL);
-    Employe(const Employe &);
-    int getNumGuichet();
-    vector<Artisan*> getArtisans();
-    vector<Participant*> getParticipants();
+    /** Constructeurs et destructeurs **/
+    Employe(){ numGuichet=-1; } //Constructeur sans parametres
+    Employe(int numGuichet,int Cin,string nom,string prenom ,int tel ,string email,string adresse, int nblangues); //Constructeur avec parametres
+    Employe(const Employe &);//Constructeur par recopie
+    Employe & operator=(const Employe &); //Surcharge operateur =
+    ~Employe(); //Desctructeur 
+   
+    /** Getters **/
+    int getNumGuichet(){return numGuichet;}
+    vector<Artisan*> getArtisans(){return artisans;}
+    vector<Participant*> getParticipants(){return participants;}
     vector<evaluation> getEvaluation(){return evaluations;}
-    void setNumGuichet(int);
-    void setArtisans(vector<Artisan*>);
-    void setParticipants(vector<Participant*>);
+
+    /** Setters **/
+    void setNumGuichet(int numGuichet){ this->numGuichet = numGuichet; }
+    void setArtisans(vector<Artisan*> artisans){ this->artisans = artisans; }
+    void setParticipants(vector<Participant*> participants) {this->participants = participants; }
     void setEvaluation(vector<evaluation> evaluations){this->evaluations = evaluations;}
-    /// void saisir_sessions(vector<int*>);
+
     void ajouter_artisan(Artisan *);
     void ajouter_evaluation();
-    ///void supprimer_artisan();
     void ajouter_participant(Participant *);
-   /// void supprimer_participant();
+
     void afficherPersonne();
     void modifier();
-    ~Employe();
-    Employe & operator=(const Employe &);
+    
     void saisir_employe();
+    /*** Surcharge des operateurs **/
     friend ostream& operator<<(ostream&,Employe&);
     friend istream& operator>>(istream&,Employe&);
 };

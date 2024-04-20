@@ -8,13 +8,71 @@
 #include<string>
 #include<vector>
 using namespace std;
-Employe::Employe():personne()
+
+Employe::Employe(int numGuichet,int c,string n,string p ,int t ,string e,string a,int nblg ):personne(c,n,p,t,e,a,nblg)
 {
-    numGuichet=-1;
+
+    this->numGuichet=numGuichet;
+}
+
+Employe::Employe(const Employe &e):personne(e)
+{
+    numGuichet=e.numGuichet;
+
+    for(int i=0;i<e.artisans.size();i++)
+
+    {
+        Artisan *artisan;
+        artisan=e.artisans[i];
+        artisans.push_back(artisan);
+    }
 
 }
-void Employe::saisir_employe()
 
+
+Employe::~Employe() {
+      for (unsigned i = 0; i < artisans.size(); ++i) {
+        delete artisans[i];
+        }
+        for (unsigned i = 0; i < participants.size(); ++i) {
+            delete participants[i];
+        }
+}
+
+Employe& Employe::operator=(const Employe &autre) {
+    if (this != &autre) { // Verifier que ce n'est pas la meme instance
+        // Copie des attributs de l'objet passe en argument dans l'objet actuel
+        personne::operator=(autre); // Appel de l'operateur d'assignation de la classe de base
+
+        // Copie de l'attribut specifique ï¿½ employï¿½
+        numGuichet = autre.numGuichet;
+
+        // Suppression des anciens artisans
+        for (int i = 0; i < artisans.size(); ++i) {
+            delete artisans[i];
+        }
+        artisans.clear(); // Effacer le vecteur
+
+        // Suppression des anciens participants
+        for (int i = 0; i < participants.size(); ++i) {
+            delete participants[i];
+        }
+        participants.clear(); // Effacer le vecteur
+        // Copie des nouveax artisans
+        for (int i = 0; i < autre.artisans.size(); ++i) {
+            Artisan* newArtisan = new Artisan(*autre.artisans[i]); // Allouer une nouvelle memoire et copier la valeur
+            artisans.push_back(newArtisan);
+        }
+        // Copie des nouveax artisans
+        for (int i = 0; i < autre.participants.size(); ++i) {
+            Participant* newParticipant = new Participant(*autre.participants[i]); // Allouer une nouvelle memoire et copier la valeur
+            participants.push_back(newParticipant);
+        }
+    }
+    return *this; // Retourner une reference vers l'objet actuel
+}
+
+void Employe::saisir_employe()
 {
     personne::saisir_personne();
     int nbArtisans;
@@ -23,11 +81,9 @@ void Employe::saisir_employe()
     cout<<"saisir le nombre des artisans : "<<endl;
     cin>>nbArtisans;
     Artisan *A = new Artisan();
-    for (int i = 0; i < nbArtisans; i++) {
-        ///int* session = new int; // Allouer dynamiquement un nouvel entier
+    for (int i = 0; i < nbArtisans; i++) {  
         cout << "Saisir l'artisan numero " << i+1 << " : ";
         cin >> *A;
-        ///cin >> *session;
         artisans.push_back(A);
     }
     int nbParticipants;
@@ -35,18 +91,12 @@ void Employe::saisir_employe()
     cin>>nbParticipants;
     Participant *p = new Participant();
     for (int i = 0; i < nbParticipants; i++) {
-        ///int* session = new int; // Allouer dynamiquement un nouvel entier
         cout << "Saisir le participant numero " << i+1 << " : ";
         cin >> *p;
-        ///cin >> *session;
         participants.push_back(p);
     }
 }
-Employe::Employe(int numGuichet,int c,string n,string p ,int t ,string e,string a,int nblg ):personne(c,n,p,t,e,a,nblg)
-{
 
-    this->numGuichet=numGuichet;
-}
 void Employe::afficherPersonne()
 {
     personne::afficherPersonne();
@@ -59,24 +109,23 @@ void Employe::afficherPersonne()
     }
 }
 void Employe::modifier() {
-    // Demander à l'utilisateur s'il souhaite modifier les informations
+    // Demander ï¿½ l'utilisateur s'il souhaite modifier les informations
     char choix;
     cout << "Voulez-vous modifier les informations de l'employe ? (o/n) ";
     cin >> choix;
     if (choix == 'o' || choix == 'O') {
         int choixParam;
         do {
-            // Demander à l'utilisateur ce qu'il souhaite modifier
-            cout << "Quel paramètre souhaitez-vous modifier ?" << endl;
+            // Demander ï¿½ l'utilisateur ce qu'il souhaite modifier
+            cout << "Quel paramï¿½tre souhaitez-vous modifier ?" << endl;
             cout << "1. Nom" << endl;
             cout << "2. Prenom" << endl;
             cout << "3. Email" << endl;
             cout << "4. Adresse" << endl;
             cout << "5. Nombre de logements" << endl;
             cout << "6. Role" << endl;
-            cout << "7. Tâches" << endl;
+            cout << "7. Tï¿½ches" << endl;
             cout << "8. Sessions" << endl;
-          //  cout << "9. Langues" << endl;
             cin >> choixParam;
 
             switch (choixParam) {
@@ -122,30 +171,13 @@ void Employe::modifier() {
                 }
 
                 default:
-                    cout << "Choix invalide. Veuillez saisir à nouveau." << endl;
+                    cout << "Choix invalide. Veuillez saisir ï¿½ nouveau." << endl;
             }
         } while (choixParam < 1 || choixParam > 6);
     }
 }
 
 
-Employe::Employe(const Employe &e):personne(e)
-{
-    numGuichet=e.numGuichet;
-
-    for(int i=0;i<e.artisans.size();i++)
-
-    {
-        Artisan *artisan;
-        artisan=e.artisans[i];
-        artisans.push_back(artisan);
-    }
-
-}
-int Employe::getNumGuichet()
-{
-    return numGuichet;
-}
 void Employe::ajouter_artisan(Artisan* a)
 {
    artisans.push_back(a);
@@ -194,60 +226,9 @@ void Employe::ajouter_evaluation()
     }
 
 }
-vector<Artisan*> Employe::getArtisans()
-{
-    return artisans;
-}
-vector<Participant*> Employe::getParticipants()
-{
-    return participants;
-}
-void Employe::setNumGuichet(int numGuichet)
-{
-    this->numGuichet=numGuichet;
-}
 
-Employe::~Employe() {
-      for (unsigned i = 0; i < artisans.size(); ++i) {
-        delete artisans[i];
-        }
-        for (unsigned i = 0; i < participants.size(); ++i) {
-            delete participants[i];
-        }
-}
 
-Employe& Employe::operator=(const Employe &autre) {
-    if (this != &autre) { // Verifier que ce n'est pas la meme instance
-        // Copie des attributs de l'objet passe en argument dans l'objet actuel
-        personne::operator=(autre); // Appel de l'operateur d'assignation de la classe de base
 
-        // Copie de l'attribut specifique à employé
-        numGuichet = autre.numGuichet;
-
-        // Suppression des anciens artisans
-        for (int i = 0; i < artisans.size(); ++i) {
-            delete artisans[i];
-        }
-        artisans.clear(); // Effacer le vecteur
-
-        // Suppression des anciens participants
-        for (int i = 0; i < participants.size(); ++i) {
-            delete participants[i];
-        }
-        participants.clear(); // Effacer le vecteur
-        // Copie des nouveax artisans
-        for (int i = 0; i < autre.artisans.size(); ++i) {
-            Artisan* newArtisan = new Artisan(*autre.artisans[i]); // Allouer une nouvelle memoire et copier la valeur
-            artisans.push_back(newArtisan);
-        }
-        // Copie des nouveax artisans
-        for (int i = 0; i < autre.participants.size(); ++i) {
-            Participant* newParticipant = new Participant(*autre.participants[i]); // Allouer une nouvelle memoire et copier la valeur
-            participants.push_back(newParticipant);
-        }
-    }
-    return *this; // Retourner une reference vers l'objet actuel
-}
 ostream& operator<<(ostream &o,Employe &e)
 {
     o<<static_cast<const personne&>(e);
@@ -268,36 +249,11 @@ ostream& operator<<(ostream &o,Employe &e)
 }
 istream& operator>>(istream &in, Employe &e)
 {
-    // Utiliser la surcharge de l'opérateur >> de la classe personne
+    // Utiliser la surcharge de l'opï¿½rateur >> de la classe personne
     in >> static_cast<personne&>(e);
-
     cout << "Saisir le num guichet : " << endl;
     in >> e.numGuichet;
-
-    // Saisie des artisans
-   /** cout << "Saisir le nombre des artisans : ";
-    int nbArtisans;
-    in >> nbArtisans;
-    for (int i = 0; i < nbArtisans; ++i) {
-        Artisan* artisan = new Artisan();
-        cout << "Saisir l'artisan " << i + 1 << " : ";
-        in >> *artisan;
-        e.artisans.push_back(artisan);
-    }
-
-
-    // Saisie des participants
-    cout << "Saisir le nombre des participants : ";
-    int nbPart;
-    in >> nbPart;
-    for (int i = 0; i < nbPart; ++i) {
-        Participant* participant = new Participant();
-        cout << "Saisir le participant " << i + 1 << " : ";
-        in >> *participant;
-        e.participants.push_back(participant);
-    }**/
-
-
+    
     return in;
 }
 
